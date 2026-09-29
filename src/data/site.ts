@@ -20,13 +20,24 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/company/bc-laws",
 };
 
-export const TEAM = [
+export type TeamMember = {
+  slug: string;
+  name: string;
+  phone: string;
+  phoneHref: string;
+  whatsapp: string;
+  excludeAreas?: string[];
+};
+
+export const TEAM: TeamMember[] = [
   {
     slug: "avocat-andreea-chelaru",
     name: "Andreea Chelaru",
     phone: "0744 484 136",
     phoneHref: "tel:+40744484136",
     whatsapp: "https://wa.me/40744484136",
+    // Practice areas (slugs) this lawyer does not handle; hidden from those pages' contact box.
+    excludeAreas: ["penal"],
   },
   {
     slug: "avocat-razvan-botezatu",

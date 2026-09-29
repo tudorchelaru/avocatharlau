@@ -12,6 +12,7 @@ export function getStaticPaths() {
 
 const { area } = Astro.props as { area: Area };
 const path = `/${area.slug}`;
+const team = TEAM.filter((p) => !p.excludeAreas?.includes(area.slug));
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -108,7 +109,7 @@ const faqSchema = area.faq.length
           <p class="aside__title">Discutăm situația dumneavoastră</p>
           <ul class="aside__people">
             {
-              TEAM.map((p) => (
+              team.map((p) => (
                 <li>
                   <span>{p.name}</span>
                   <a href={p.phoneHref}>{p.phone}</a>
