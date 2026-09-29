@@ -37,7 +37,7 @@ export const TEAM: TeamMember[] = [
     phoneHref: "tel:+40744484136",
     whatsapp: "https://wa.me/40744484136",
     // Practice areas (slugs) this lawyer does not handle; hidden from those pages' contact box.
-    excludeAreas: ["penal"],
+    excludeAreas: ["penal", "imigrari"],
   },
   {
     slug: "avocat-razvan-botezatu",
@@ -52,6 +52,7 @@ export const TEAM: TeamMember[] = [
     phone: "0740 160 507",
     phoneHref: "tel:+40740160507",
     whatsapp: "https://wa.me/40740160507",
+    excludeAreas: ["imigrari"],
   },
 ];
 
