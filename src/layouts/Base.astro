@@ -30,7 +30,7 @@ const legalService = {
   telephone: SITE.phone,
   email: SITE.email,
   image: ogImage,
-  logo: `${SITE.url}/images/logo.webp`,
+  logo: `${SITE.url}/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo.png`,
   address: {
     "@type": "PostalAddress",
     streetAddress: "Str. Anastasie Panu 23, Bloc Muntenia, Et. 1",
@@ -115,8 +115,18 @@ const schemas = [legalService, ...jsonLd];
 
     <header class="topbar">
       <div class="wrap topbar__inner">
-        <a href="/" class="brand" aria-label="Andreea Chelaru – Avocat, pagina principală">
-          <img src="/images/logo.webp" alt="Andreea Chelaru – Avocat" width="600" height="121" />
+        <a href="/" class="brand" aria-label="AvocatHârlău.ro – pagina principală">
+          <picture>
+            <source type="image/avif" srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-480w.avif 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-960w.avif 960w" sizes="260px" />
+            <img
+              src="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-480w.webp"
+              srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-480w.webp 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-960w.webp 960w"
+              sizes="260px"
+              alt="AvocatHârlău.ro – Chelaru, Botezatu, Chiperi"
+              width="960"
+              height="167" fetchpriority="high"
+            />
+          </picture>
         </a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="meniu" aria-label="Deschide meniul">
           <span></span><span></span><span></span>
@@ -142,7 +152,17 @@ const schemas = [legalService, ...jsonLd];
     <footer class="footer">
       <div class="wrap footer__grid">
         <div class="footer__brand">
-          <img src="/images/logo.webp" alt="Andreea Chelaru – Avocat" width="600" height="121" loading="lazy" />
+          <picture>
+            <source type="image/avif" srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-480w.avif 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-960w.avif 960w" sizes="260px" />
+            <img
+              src="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-480w.webp"
+              srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-480w.webp 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-light-960w.webp 960w"
+              sizes="260px"
+              alt="AvocatHârlău.ro – Chelaru, Botezatu, Chiperi"
+              width="960"
+              height="167" loading="lazy" decoding="async"
+            />
+          </picture>
           <p>
             Consultanță și reprezentare juridică pentru clienții din Hârlău și zona Cotnari. Membră a Baroului Iași din
             {SITE.since}.

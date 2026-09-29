@@ -178,10 +178,13 @@ p {
   gap: 24px;
   height: 72px;
 }
+.brand {
+  display: flex;
+  align-items: center;
+}
 .brand img {
-  height: 38px;
+  height: 44px;
   width: auto;
-  filter: invert(1) brightness(0.95);
 }
 .nav {
   display: flex;
@@ -920,9 +923,9 @@ main:focus {
   padding-bottom: 48px;
 }
 .footer__brand img {
-  height: 34px;
+  display: block;
+  height: 42px;
   width: auto;
-  filter: invert(1) brightness(0.95);
   margin-bottom: 18px;
 }
 .footer__title {
@@ -1045,7 +1048,7 @@ main:focus {
     height: 62px;
   }
   .brand img {
-    height: 30px;
+    height: 34px;
   }
   .topbar__call {
     display: none;
