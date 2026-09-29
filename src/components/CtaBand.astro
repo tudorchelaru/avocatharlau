@@ -4,11 +4,13 @@ import { SITE } from "../data/site";
 interface Props {
   title?: string;
   text?: string;
+  phone?: { display: string; href: string };
 }
 
 const {
   title = "Aveți nevoie de asistență juridică?",
   text = "Contactați-ne pentru o consultație inițială. Suntem aici să vă ajutăm.",
+  phone = { display: SITE.phone, href: SITE.phoneHref },
 } = Astro.props;
 ---
 
@@ -20,7 +22,7 @@ const {
     </div>
     <div class="hero__actions">
       <a href="/contact" class="btn btn--gold">Contactează-ne</a>
-      <a href={SITE.phoneHref} class="btn btn--ghost">{SITE.phone}</a>
+      <a href={phone.href} class="btn btn--ghost">{phone.display}</a>
     </div>
   </div>
 </section>

@@ -13,6 +13,8 @@ export function getStaticPaths() {
 const { area } = Astro.props as { area: Area };
 const path = `/${area.slug}`;
 const team = TEAM.filter((p) => !p.excludeAreas?.includes(area.slug));
+// The first lawyer who handles this area is the page's call-to-action number.
+const phone = { display: team[0].phone, href: team[0].phoneHref };
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -43,7 +45,7 @@ const faqSchema = area.faq.length
   : [];
 ---
 
-<Base title={area.seoTitle} description={area.seoDescription} path={path} jsonLd={[serviceSchema, ...faqSchema]}>
+<Base title={area.seoTitle} description={area.seoDescription} path={path} jsonLd={[serviceSchema, ...faqSchema]} phone={phone}>
   <PageHero
     eyebrow="Domenii de activitate"
     title={area.title}
@@ -123,5 +125,5 @@ const faqSchema = area.faq.length
     </div>
   </section>
 
-  <CtaBand />
+  <CtaBand phone={phone} />
 </Base>

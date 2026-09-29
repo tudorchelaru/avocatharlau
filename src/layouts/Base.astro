@@ -9,9 +9,19 @@ interface Props {
   jsonLd?: Record<string, unknown>[];
   noindex?: boolean;
   ogType?: "website" | "article";
+  /** Phone for the mobile call bar and menu; defaults to the site's main number. */
+  phone?: { display: string; href: string };
 }
 
-const { title, description, path, jsonLd = [], noindex = false, ogType = "website" } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  jsonLd = [],
+  noindex = false,
+  ogType = "website",
+  phone = { display: SITE.phone, href: SITE.phoneHref },
+} = Astro.props;
 
 const canonical = path === "/" ? `${SITE.url}/` : `${SITE.url}${path}`;
 // Keep titles under ~60 chars so Google doesn't truncate them.
@@ -159,7 +169,7 @@ const schemas = [legalService, ...jsonLd];
             </ul>
           </div>
           <a href="/contact" aria-current={current === "/contact" ? "page" : undefined}>Contact</a>
-          <a href={SITE.phoneHref} class="nav__call">Sună · {SITE.phone}</a>
+          <a href={phone.href} class="nav__call">Sună · {phone.display}</a>
         </nav>
         <a href="/contact" class="btn btn--gold btn--sm topbar__call">Programează o consultație</a>
       </div>
@@ -232,7 +242,7 @@ const schemas = [legalService, ...jsonLd];
     </footer>
 
     <nav class="sticky-cta" aria-label="Contact rapid">
-      <a href={SITE.phoneHref}>Sună acum</a>
+      <a href={phone.href}>Sună acum</a>
       <a href="/contact">Programare</a>
     </nav>
 
