@@ -166,10 +166,11 @@ p {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(19, 17, 15, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid var(--ink-line);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 12px rgba(19, 17, 15, 0.05);
 }
 .topbar__inner {
   display: flex;
@@ -191,14 +192,14 @@ p {
   gap: 28px;
 }
 .nav a {
-  color: var(--on-ink-muted);
+  color: var(--text);
   text-decoration: none;
   font-size: 14.5px;
   font-weight: 600;
   transition: color 0.2s;
 }
 .nav a:hover {
-  color: var(--gold-hi);
+  color: var(--gold-deep);
 }
 
 /* ---------- Hero ---------- */
@@ -589,7 +590,7 @@ p {
 
 /* ---------- Navigation states & mobile menu ---------- */
 .nav a[aria-current="page"] {
-  color: var(--gold-hi);
+  color: var(--gold-deep);
 }
 .nav__call {
   display: none;
@@ -608,7 +609,7 @@ p {
 .menu-btn span {
   display: block;
   height: 2px;
-  background: var(--on-ink);
+  background: var(--text);
   border-radius: 2px;
   transition: transform 0.25s, opacity 0.25s;
 }
@@ -911,8 +912,9 @@ main:focus {
 
 /* ---------- Footer ---------- */
 .footer {
-  background: #0d0c0b;
-  color: var(--on-ink-muted);
+  background: var(--paper);
+  color: var(--muted);
+  border-top: 1px solid var(--line);
   font-size: 14.5px;
 }
 .footer__grid {
@@ -933,7 +935,7 @@ main:focus {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-deep);
   margin-bottom: 14px;
 }
 .footer ul {
@@ -945,11 +947,11 @@ main:focus {
   padding: 4px 0;
 }
 .footer a {
-  color: var(--on-ink);
+  color: var(--text);
   text-decoration: none;
 }
 .footer a:hover {
-  color: var(--gold-hi);
+  color: var(--gold-deep);
 }
 .footer__bottom {
   display: flex;
@@ -958,7 +960,7 @@ main:focus {
   gap: 12px;
   padding-top: 22px;
   padding-bottom: 22px;
-  border-top: 1px solid var(--ink-line);
+  border-top: 1px solid var(--line);
   font-size: 13.5px;
 }
 .footer__bottom p {
@@ -986,8 +988,9 @@ main:focus {
     flex-direction: column;
     gap: 0;
     padding: 8px 24px 24px;
-    background: var(--ink);
-    border-bottom: 1px solid var(--ink-line);
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 30px rgba(19, 17, 15, 0.08);
   }
   .nav.is-open {
     display: flex;
@@ -995,7 +998,7 @@ main:focus {
   .nav a {
     padding: 14px 0;
     font-size: 17px;
-    border-bottom: 1px solid var(--ink-line);
+    border-bottom: 1px solid var(--line);
   }
   .nav .nav__call {
     display: block;
