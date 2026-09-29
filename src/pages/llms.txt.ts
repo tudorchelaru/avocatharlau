@@ -13,7 +13,6 @@ ${TEAM.map((p) => `- ${p.name}: ${p.phone}`).join("\n")}
 
 ## Contact
 - Email: ${SITE.email}
-- Adresă: ${SITE.address}
 - Hârlău: ${SITE.officeHarlau}
 - Program: ${SITE.hours}
 - Formular: ${SITE.url}/contact

@@ -9,13 +9,11 @@ export const SITE = {
   phoneHref: "tel:+40744484136",
   whatsapp: "https://wa.me/40744484136",
   email: "contact@avocatharlau.ro",
-  address: "Str. Anastasie Panu nr. 23, bl. Muntenia, sc. B, et. 1, ap. 1, Iași, România",
-  officeHarlau: "În curând — programări prin telefon",
+  // No public address until the Hârlău office is found.
+  officeHarlau: "Sediul din Hârlău se deschide în curând. Întâlnirile au loc pe bază de programare.",
   hours: "Luni – Vineri, 09:00 – 17:00",
   ogImage: "/images/og-avocat-harlau.jpg",
   logoPng: "/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo.png",
-  googleMaps: "https://www.google.com/maps/search/?api=1&query=Strada+Anastasie+Panu+23+Iasi",
-  appleMaps: "https://maps.apple.com/?q=Strada+Anastasie+Panu+23,+Iasi",
   facebook: "https://www.facebook.com/avocatiiasi",
   linkedin: "https://www.linkedin.com/company/bc-laws",
 };

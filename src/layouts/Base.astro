@@ -43,13 +43,6 @@ const legalService = {
   image: ogImage,
   logo: `${SITE.url}${SITE.logoPng}`,
   slogan: SITE.tagline,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Str. Anastasie Panu nr. 23, bl. Muntenia, sc. B, et. 1, ap. 1",
-    addressLocality: "Iași",
-    addressRegion: "Iași",
-    addressCountry: "RO",
-  },
   areaServed: [
     { "@type": "City", name: "Hârlău" },
     { "@type": "City", name: "Cotnari" },
@@ -214,7 +207,6 @@ const schemas = [legalService, ...jsonLd];
             }
           </ul>
           <p class="footer__line"><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
-          <p class="footer__line">{SITE.address}</p>
         </div>
         <nav aria-label="Domenii de activitate">
           <p class="footer__title">Domenii de activitate</p>
