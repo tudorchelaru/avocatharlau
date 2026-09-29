@@ -7,7 +7,7 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
-  trailingSlash: "ignore",
+  trailingSlash: "never",
   build: {
     inlineStylesheets: "always",
   },

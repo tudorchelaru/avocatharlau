@@ -1,0 +1,45 @@
+---
+import { SITE } from "../data/site";
+
+interface Props {
+  title: string;
+  lead?: string;
+  eyebrow?: string;
+  crumbs: { label: string; href?: string }[];
+}
+
+const { title, lead, eyebrow, crumbs } = Astro.props;
+---
+
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Acasă</a></li>
+        {
+          crumbs.map((c) => (
+            <li>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
+          ))
+        }
+      </ol>
+    </nav>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    {lead && <p class="page-hero__lead">{lead}</p>}
+  </div>
+</section>
+
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ label: "Acasă", href: "/" }, ...crumbs].map((c, i, all) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.label,
+      item: `${SITE.url}${c.href && c.href !== "/" ? c.href : i === 0 ? "/" : Astro.url.pathname.replace(/\/$/, "")}`,
+    })),
+  })}
+/>

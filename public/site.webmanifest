@@ -1,0 +1,13 @@
+{
+  "name": "Avocat Hârlău – Andreea Chelaru",
+  "short_name": "Avocat Hârlău",
+  "lang": "ro",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#13110F",
+  "theme_color": "#13110F",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.png", "type": "image/png" }
+  ]
+}

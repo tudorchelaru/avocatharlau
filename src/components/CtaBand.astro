@@ -1,0 +1,26 @@
+---
+import { SITE } from "../data/site";
+
+interface Props {
+  title?: string;
+  text?: string;
+}
+
+const {
+  title = "Aveți nevoie de un avocat în Hârlău?",
+  text = "Sunați sau scrieți pe WhatsApp. Stabilim împreună dacă ne vedem online, la Iași sau la Hârlău.",
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="wrap cta-band__inner">
+    <div>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="hero__actions">
+      <a href={SITE.phoneHref} class="btn btn--gold">Sună · {SITE.phone}</a>
+      <a href={SITE.whatsapp} class="btn btn--ghost" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</section>

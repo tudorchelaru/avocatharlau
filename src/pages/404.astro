@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+import { NAV } from "../data/site";
+
+export const prerender = true;
+---
+
+<Base
+  title="Pagina nu a fost găsită"
+  description="Pagina căutată nu există. Reveniți la pagina principală a cabinetului de avocatură din Hârlău."
+  path="/404"
+  noindex
+>
+  <section class="page-hero page-hero--center">
+    <div class="wrap">
+      <p class="eyebrow">Eroare 404</p>
+      <h1>Pagina nu a fost găsită</h1>
+      <p class="page-hero__lead">Adresa accesată nu există sau a fost mutată.</p>
+      <div class="hero__actions hero__actions--center">
+        <a href="/" class="btn btn--gold">Pagina principală</a>
+        {NAV.map((n) => <a href={n.href} class="btn btn--ghost">{n.label}</a>)}
+      </div>
+    </div>
+  </section>
+</Base>

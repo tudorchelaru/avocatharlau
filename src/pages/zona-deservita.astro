@@ -1,0 +1,49 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { LOCALITIES, SERVICES } from "../data/site";
+
+export const prerender = true;
+---
+
+<Base
+  title="Zona deservită – Avocat Hârlău, Cotnari, Deleni, Belcești"
+  description="Avocat pentru clienții din Hârlău și comunele arondate Judecătoriei Hârlău: Cotnari, Scobinți, Belcești, Sipote, Plugari, Deleni, Erbiceni și Focuri."
+  path="/zona-deservita"
+>
+  <PageHero
+    eyebrow="Zona deservită"
+    title="Avocat pentru Hârlău și comunele din jur"
+    lead="Reprezentare în fața Judecătoriei Hârlău și a Tribunalului Iași pentru clienții din oraș și din comunele arondate."
+    crumbs={[{ label: "Zona deservită" }]}
+  />
+
+  <section class="section">
+    <div class="wrap article">
+      <div class="prose">
+        <h2>Judecătoria Hârlău</h2>
+        <p>
+          Judecătoria Hârlău face parte din circumscripția Tribunalului Iași și judecă, în primă instanță, majoritatea
+          cauzelor civile, de familie și contravenționale ale locuitorilor din Hârlău și din comunele arondate.
+        </p>
+        <p>
+          Pentru clienții din această zonă, consultația poate avea loc online, la cabinetul din Iași sau la Hârlău, pe
+          bază de programare. Cabinetul din Hârlău se deschide în curând.
+        </p>
+
+        <h2>Localități deservite</h2>
+        <ul class="chips chips--light">
+          {LOCALITIES.map((l) => <li>{l}</li>)}
+        </ul>
+
+        <h2>Servicii disponibile în zonă</h2>
+        <ul class="checklist">
+          {SERVICES.map((s) => <li><a href={`/servicii/${s.slug}`}>{s.title}</a> — {s.short}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

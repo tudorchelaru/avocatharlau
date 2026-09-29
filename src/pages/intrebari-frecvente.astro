@@ -1,0 +1,61 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { GENERAL_FAQ, SERVICES } from "../data/site";
+
+export const prerender = true;
+
+const groups = [
+  { title: "Despre colaborare", slug: null, items: GENERAL_FAQ },
+  ...SERVICES.map((s) => ({ title: s.title, slug: s.slug, items: s.faq })),
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: groups.flatMap((g) =>
+    g.items.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  ),
+};
+---
+
+<Base
+  title="Întrebări frecvente – Avocat Hârlău"
+  description="Răspunsuri la întrebările frecvente despre divorț, succesiuni, concediere, amenzi și colaborarea cu un avocat în Hârlău."
+  path="/intrebari-frecvente"
+  jsonLd={[faqSchema]}
+>
+  <PageHero
+    eyebrow="Întrebări frecvente"
+    title="Întrebări frecvente"
+    lead="Răspunsuri scurte la cele mai des întâlnite întrebări. Pentru situația dumneavoastră concretă, programați o consultație."
+    crumbs={[{ label: "Întrebări frecvente" }]}
+  />
+
+  <section class="section">
+    <div class="wrap faq-page">
+      {
+        groups.map((g) => (
+          <div class="faq-group">
+            <h2>{g.slug ? <a href={`/servicii/${g.slug}`}>{g.title}</a> : g.title}</h2>
+            <div class="faq__list">
+              {g.items.map((f) => (
+                <details>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
