@@ -1,13 +1,12 @@
 ---
 import Base from "../layouts/Base.astro";
-import { NAV } from "../data/site";
 
 export const prerender = true;
 ---
 
 <Base
   title="Pagina nu a fost găsită"
-  description="Pagina căutată nu există. Reveniți la pagina principală a cabinetului de avocatură din Hârlău."
+  description="Pagina căutată nu există. Reveniți la pagina principală AvocatHârlău.ro."
   path="/404"
   noindex
 >
@@ -18,7 +17,8 @@ export const prerender = true;
       <p class="page-hero__lead">Adresa accesată nu există sau a fost mutată.</p>
       <div class="hero__actions hero__actions--center">
         <a href="/" class="btn btn--gold">Pagina principală</a>
-        {NAV.map((n) => <a href={n.href} class="btn btn--ghost">{n.label}</a>)}
+        <a href="/despre-noi" class="btn btn--ghost">Despre noi</a>
+        <a href="/contact" class="btn btn--ghost">Contact</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,139 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { SITE, TEAM, STATS, WHY_US } from "../data/site";
+
+export const prerender = true;
+
+const aboutPage = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  url: `${SITE.url}/despre-noi`,
+  about: { "@id": `${SITE.url}/#cabinet` },
+};
+---
+
+<Base
+  title="Despre noi – Chelaru, Botezatu, Chiperi"
+  description="Află mai multe despre casa de avocatură Chelaru | Botezatu | Chiperi, cu peste 22 de ani de experiență în servicii juridice, pentru clienții din Hârlău și Iași."
+  path="/despre-noi"
+  jsonLd={[aboutPage]}
+>
+  <PageHero
+    eyebrow="Despre noi"
+    title="Despre noi"
+    lead="Suntem specializați în toate tipurile de cazuri."
+    crumbs={[{ label: "Despre noi" }]}
+  />
+
+  <section class="section">
+    <div class="wrap about-intro">
+      <div class="prose">
+        <p>
+          Întotdeauna am fost cu un pas înainte în practica avocaturii. Am anticipat nevoile în continuă transformare ale
+          clienților noștri și am fost implicați în multe dintre tranzacțiile acestora.
+        </p>
+        <p>
+          Portofoliul de mandate al firmei este impresionant nu numai prin numărul mare de tranzacții, ci și profund
+          sofisticat prin complexitatea acestora. Astăzi, această experiență de neegalat în toate domeniile dreptului
+          este pusă la dispoziția clienților noștri.
+        </p>
+      </div>
+      <dl class="stats stats--light">
+        {
+          STATS.map((s) => (
+            <div>
+              <dt>{s.value}</dt>
+              <dd>{s.label}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow eyebrow--dark">Valorile noastre</p>
+        <h2>De ce să ne alegeți pe noi</h2>
+        <p class="section__intro">
+          Ne concentrăm pe dezvoltarea permanentă a unor servicii ce aduc valoare adăugată, personalizate, menite să
+          permită clienților noștri să evolueze într-un mediu solid din punct de vedere juridic.
+        </p>
+      </header>
+      <ul class="cards cards--three">
+        {
+          WHY_US.map((w, i) => (
+            <li class="card">
+              <span class="step__num">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{w.title}</h3>
+              <p>{w.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <header class="section__head">
+        <p class="eyebrow eyebrow--dark">Echipa</p>
+        <h2>Echipa noastră</h2>
+      </header>
+      <ul class="team">
+        {
+          TEAM.map((p) => (
+            <li class="team__card">
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset={`/images/echipa/${p.slug}-400w.avif 400w, /images/echipa/${p.slug}-600w.avif 600w`}
+                  sizes="(max-width: 800px) 90vw, 360px"
+                />
+                <img
+                  src={`/images/echipa/${p.slug}-400w.webp`}
+                  srcset={`/images/echipa/${p.slug}-400w.webp 400w, /images/echipa/${p.slug}-600w.webp 600w`}
+                  sizes="(max-width: 800px) 90vw, 360px"
+                  alt={`Avocat ${p.name}`}
+                  width="600"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <div class="team__body">
+                <h3>{p.name}</h3>
+                <p class="team__role">Avocat</p>
+                <a href={p.phoneHref}>{p.phone}</a>
+                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap office">
+      <div>
+        <p class="eyebrow eyebrow--dark">Sediu</p>
+        <h2>Sediul nostru</h2>
+        <p>
+          Ne puteți vizita la adresa: {SITE.address}. Programările se fac telefonic sau prin email. Pentru clienții din
+          Hârlău, ne putem deplasa pe bază de programare.
+        </p>
+      </div>
+      <div class="hero__actions">
+        <a href={SITE.googleMaps} class="btn btn--outline" target="_blank" rel="noopener noreferrer">Google Maps</a>
+        <a href={SITE.appleMaps} class="btn btn--outline" target="_blank" rel="noopener noreferrer">Apple Maps</a>
+        <a href="/contact" class="btn btn--gold">Contactează-ne</a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import { SITE } from "../data/site";
+
+export const prerender = true;
+const op = `${SITE.firm} (${SITE.name})`;
+---
+
+<Base
+  title="Politica de confidențialitate"
+  description={`Politica de confidențialitate ${SITE.name}. Informații despre prelucrarea datelor personale conform GDPR.`}
+  path="/politica-de-confidentialitate"
+>
+  <PageHero title="Politica de confidențialitate" crumbs={[{ label: "Politica de confidențialitate" }]} />
+
+  <section class="section">
+    <div class="wrap article">
+      <div class="prose">
+        <p>
+          {op} respectă confidențialitatea datelor dumneavoastră personale și se angajează să le protejeze în conformitate
+          cu Regulamentul General privind Protecția Datelor (GDPR – Regulamentul UE 2016/679) și legislația națională
+          aplicabilă.
+        </p>
+
+        <h2>1. Operatorul de date</h2>
+        <p>Operatorul de date personale este {op}, cu sediul în {SITE.address}.</p>
+
+        <h2>2. Ce date colectăm</h2>
+        <p>Prin intermediul formularului de contact de pe site, colectăm următoarele date personale:</p>
+        <ul class="checklist">
+          <li>Numele și prenumele</li>
+          <li>Adresa de email</li>
+          <li>Numărul de telefon</li>
+          <li>Mesajul transmis</li>
+        </ul>
+
+        <h2>3. Scopul prelucrării datelor</h2>
+        <p>Datele personale colectate sunt utilizate exclusiv pentru:</p>
+        <ul class="checklist">
+          <li>Răspunderea la solicitările dumneavoastră transmise prin formularul de contact</li>
+          <li>Contactarea dumneavoastră în legătură cu cererea formulată</li>
+          <li>Furnizarea serviciilor juridice solicitate</li>
+        </ul>
+
+        <h2>4. Temeiul juridic al prelucrării</h2>
+        <p>
+          Prelucrarea datelor personale se realizează în baza consimțământului dumneavoastră, acordat prin completarea și
+          trimiterea formularului de contact (art. 6 alin. 1 lit. a GDPR), precum și în vederea executării unui contract
+          sau a unor măsuri precontractuale (art. 6 alin. 1 lit. b GDPR).
+        </p>
+
+        <h2>5. Durata stocării datelor</h2>
+        <p>
+          Datele personale sunt păstrate doar pe durata necesară îndeplinirii scopurilor pentru care au fost colectate sau
+          pe durata impusă de obligațiile legale aplicabile.
+        </p>
+
+        <h2>6. Transferul datelor către terți</h2>
+        <p>
+          Nu transmitem datele dumneavoastră personale către terți, cu excepția cazurilor prevăzute de lege sau atunci când
+          este necesar pentru furnizarea serviciilor juridice solicitate.
+        </p>
+
+        <h2>7. Cookie-uri</h2>
+        <p>
+          Acest site nu utilizează cookie-uri de urmărire sau cookie-uri publicitare. Se folosesc doar cookie-uri esențiale
+          necesare funcționării corecte a site-ului.
+        </p>
+
+        <h2>8. Drepturile dumneavoastră</h2>
+        <p>Conform GDPR, aveți următoarele drepturi:</p>
+        <ul class="checklist">
+          <li>Dreptul de acces — puteți solicita informații despre datele personale pe care le prelucrăm</li>
+          <li>Dreptul la rectificare — puteți solicita corectarea datelor inexacte</li>
+          <li>Dreptul la ștergere — puteți solicita ștergerea datelor personale</li>
+          <li>Dreptul la restricționarea prelucrării — puteți solicita limitarea prelucrării datelor</li>
+          <li>Dreptul la portabilitatea datelor — puteți solicita transferul datelor către un alt operator</li>
+          <li>Dreptul de opoziție — vă puteți opune prelucrării datelor personale</li>
+          <li>
+            Dreptul de a depune o plângere — puteți depune o plângere la Autoritatea Națională de Supraveghere a
+            Prelucrării Datelor cu Caracter Personal (ANSPDCP)
+          </li>
+        </ul>
+
+        <h2>9. Contact</h2>
+        <p>
+          Pentru exercitarea drepturilor dumneavoastră sau pentru orice întrebări legate de prelucrarea datelor personale,
+          ne puteți contacta la:
+        </p>
+        <ul class="checklist">
+          <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          <li>Telefon: <a href={SITE.phoneHref}>{SITE.phone}</a></li>
+          <li>Adresă: {SITE.address}</li>
+        </ul>
+
+        <h2>10. Modificări ale politicii de confidențialitate</h2>
+        <p>
+          Ne rezervăm dreptul de a actualiza această politică de confidențialitate. Orice modificare va fi publicată pe
+          această pagină.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,28 +1,28 @@
 import type { APIRoute } from "astro";
-import { SITE, SERVICES, LOCALITIES } from "../data/site";
+import { SITE, AREAS, TEAM, LOCALITIES } from "../data/site";
 
 export const prerender = true;
 
 export const GET: APIRoute = () => {
-  const body = `# ${SITE.name}
+  const body = `# ${SITE.name} – ${SITE.firm}
 
-> Cabinet de avocatură pentru clienții din Hârlău și zona Cotnari, județul Iași. Avocat Andreea Chelaru, membră a Baroului Iași din ${SITE.since}. Reprezentare la Judecătoria Hârlău și Tribunalul Iași.
+> Casă de avocatură cu ${SITE.tagline.toLowerCase()}, pentru clienții din Hârlău și din comunele arondate Judecătoriei Hârlău (${LOCALITIES.join(", ")}), județul Iași.
+
+## Avocați
+${TEAM.map((p) => `- ${p.name}: ${p.phone}`).join("\n")}
 
 ## Contact
-- Telefon: ${SITE.phone}
-- WhatsApp: ${SITE.whatsapp}
 - Email: ${SITE.email}
-- Cabinet Iași: ${SITE.officeIasi}
-- Cabinet Hârlău: ${SITE.officeHarlau}
+- Adresă: ${SITE.address}
+- Hârlău: ${SITE.officeHarlau}
 - Program: ${SITE.hours}
+- Formular: ${SITE.url}/contact
 
-## Servicii
-${SERVICES.map((s) => `- [${s.title}](${SITE.url}/servicii/${s.slug}): ${s.short}`).join("\n")}
+## Domenii de activitate
+${AREAS.map((a) => `- [${a.title}](${SITE.url}/${a.slug}): ${a.short}`).join("\n")}
 
 ## Pagini
-- [Despre](${SITE.url}/despre)
-- [Zona deservită](${SITE.url}/zona-deservita): ${LOCALITIES.join(", ")}
-- [Întrebări frecvente](${SITE.url}/intrebari-frecvente)
+- [Despre noi](${SITE.url}/despre-noi)
 - [Contact](${SITE.url}/contact)
 `;
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });

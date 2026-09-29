@@ -1,16 +1,15 @@
 import type { APIRoute } from "astro";
-import { SITE, SERVICES } from "../data/site";
+import { SITE, AREAS } from "../data/site";
 
 export const prerender = true;
 
 const pages: { path: string; priority: string; changefreq: string }[] = [
   { path: "/", priority: "1.0", changefreq: "monthly" },
-  { path: "/servicii", priority: "0.9", changefreq: "monthly" },
-  ...SERVICES.map((s) => ({ path: `/servicii/${s.slug}`, priority: "0.8", changefreq: "monthly" })),
-  { path: "/despre", priority: "0.7", changefreq: "yearly" },
-  { path: "/zona-deservita", priority: "0.7", changefreq: "yearly" },
-  { path: "/intrebari-frecvente", priority: "0.6", changefreq: "monthly" },
+  ...AREAS.map((a) => ({ path: `/${a.slug}`, priority: "0.8", changefreq: "monthly" })),
+  { path: "/despre-noi", priority: "0.7", changefreq: "yearly" },
   { path: "/contact", priority: "0.8", changefreq: "yearly" },
+  { path: "/politica-de-confidentialitate", priority: "0.2", changefreq: "yearly" },
+  { path: "/termeni-si-conditii", priority: "0.2", changefreq: "yearly" },
 ];
 
 export const GET: APIRoute = () => {
@@ -18,7 +17,7 @@ export const GET: APIRoute = () => {
   const urls = pages
     .map(
       (p) => `  <url>
-    <loc>${SITE.url}${p.path === "/" ? "/" : p.path}</loc>
+    <loc>${SITE.url}${p.path}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>

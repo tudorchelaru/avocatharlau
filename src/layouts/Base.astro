@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SITE, NAV, SERVICES } from "../data/site";
+import { SITE, TEAM, AREAS, FOOTER_AREAS } from "../data/site";
 
 interface Props {
   title: string;
@@ -15,25 +15,27 @@ const { title, description, path, jsonLd = [], noindex = false, ogType = "websit
 
 const canonical = path === "/" ? `${SITE.url}/` : `${SITE.url}${path}`;
 // Keep titles under ~60 chars so Google doesn't truncate them.
-const suffix = " | Andreea Chelaru";
-const fullTitle = title.includes("Andreea Chelaru") || title.length + suffix.length > 62 ? title : `${title}${suffix}`;
+const suffix = ` | ${SITE.name}`;
+const fullTitle = title.includes(SITE.name) || title.length + suffix.length > 62 ? title : `${title}${suffix}`;
 const ogImage = `${SITE.url}${SITE.ogImage}`;
 const current = Astro.url.pathname.replace(/\/$/, "") || "/";
-const isActive = (href: string) => current === href || current.startsWith(`${href}/`);
+const areaActive = AREAS.some((a) => current === `/${a.slug}`);
+const L = "/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo";
 
 const legalService = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "@id": `${SITE.url}/#cabinet`,
-  name: "Cabinet Avocat Andreea Chelaru – Hârlău",
+  name: `${SITE.name} – ${SITE.firm}`,
   url: `${SITE.url}/`,
   telephone: SITE.phone,
   email: SITE.email,
   image: ogImage,
-  logo: `${SITE.url}/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo.png`,
+  logo: `${SITE.url}${SITE.logoPng}`,
+  slogan: SITE.tagline,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Str. Anastasie Panu 23, Bloc Muntenia, Et. 1",
+    streetAddress: "Str. Anastasie Panu nr. 23, bl. Muntenia, sc. B, et. 1, ap. 1",
     addressLocality: "Iași",
     addressRegion: "Iași",
     addressCountry: "RO",
@@ -49,14 +51,15 @@ const legalService = {
     opens: "09:00",
     closes: "17:00",
   },
-  founder: {
+  employee: TEAM.map((p) => ({
     "@type": "Person",
-    "@id": `${SITE.url}/#andreea-chelaru`,
-    name: "Andreea Chelaru",
+    "@id": `${SITE.url}/#${p.slug}`,
+    name: p.name,
     jobTitle: "Avocat",
-    memberOf: { "@type": "Organization", name: "Baroul Iași", url: "https://www.barouliasi.ro/" },
-  },
-  sameAs: ["https://avocatchelaru.ro/", "https://www.barouliasi.ro/"],
+    telephone: p.phone,
+  })),
+  knowsAbout: AREAS.map((a) => a.title),
+  sameAs: [SITE.facebook, SITE.linkedin],
 };
 
 const schemas = [legalService, ...jsonLd];
@@ -71,7 +74,6 @@ const schemas = [legalService, ...jsonLd];
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow, max-image-preview:large" />}
-    <meta name="author" content="Andreea Chelaru" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="geo.region" content="RO-IS" />
@@ -93,7 +95,7 @@ const schemas = [legalService, ...jsonLd];
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Avocat Andreea Chelaru – Hârlău" />
+    <meta property="og:image:alt" content="AvocatHârlău.ro – Chelaru, Botezatu, Chiperi" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
@@ -117,14 +119,15 @@ const schemas = [legalService, ...jsonLd];
       <div class="wrap topbar__inner">
         <a href="/" class="brand" aria-label="AvocatHârlău.ro – pagina principală">
           <picture>
-            <source type="image/avif" srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-480w.avif 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-960w.avif 960w" sizes="260px" />
+            <source type="image/avif" srcset={`${L}-480w.avif 480w, ${L}-960w.avif 960w`} sizes="260px" />
             <img
-              src="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-480w.webp"
-              srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-480w.webp 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-960w.webp 960w"
+              src={`${L}-480w.webp`}
+              srcset={`${L}-480w.webp 480w, ${L}-960w.webp 960w`}
               sizes="260px"
               alt="AvocatHârlău.ro – Chelaru, Botezatu, Chiperi"
               width="960"
-              height="167" fetchpriority="high"
+              height="167"
+              fetchpriority="high"
             />
           </picture>
         </a>
@@ -132,16 +135,33 @@ const schemas = [legalService, ...jsonLd];
           <span></span><span></span><span></span>
         </button>
         <nav class="nav" id="meniu" aria-label="Navigare principală">
-          {
-            NAV.map((item) => (
-              <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
-                {item.label}
-              </a>
-            ))
-          }
+          <a href="/" aria-current={current === "/" ? "page" : undefined}>Acasă</a>
+          <a href="/despre-noi" aria-current={current === "/despre-noi" ? "page" : undefined}>Despre noi</a>
+          <div class="nav__drop">
+            <button
+              type="button"
+              class:list={["nav__drop-btn", { "is-active": areaActive }]}
+              aria-expanded="false"
+              aria-controls="domenii"
+            >
+              Domenii de activitate
+            </button>
+            <ul class="nav__menu" id="domenii">
+              {
+                AREAS.map((a) => (
+                  <li>
+                    <a href={`/${a.slug}`} aria-current={current === `/${a.slug}` ? "page" : undefined}>
+                      {a.title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <a href="/contact" aria-current={current === "/contact" ? "page" : undefined}>Contact</a>
           <a href={SITE.phoneHref} class="nav__call">Sună · {SITE.phone}</a>
         </nav>
-        <a href={SITE.phoneHref} class="btn btn--gold btn--sm topbar__call">{SITE.phone}</a>
+        <a href="/contact" class="btn btn--gold btn--sm topbar__call">Programează o consultație</a>
       </div>
     </header>
 
@@ -153,51 +173,67 @@ const schemas = [legalService, ...jsonLd];
       <div class="wrap footer__grid">
         <div class="footer__brand">
           <picture>
-            <source type="image/avif" srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-480w.avif 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-960w.avif 960w" sizes="260px" />
+            <source type="image/avif" srcset={`${L}-480w.avif 480w, ${L}-960w.avif 960w`} sizes="240px" />
             <img
-              src="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-480w.webp"
-              srcset="/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-480w.webp 480w, /images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo-960w.webp 960w"
-              sizes="260px"
+              src={`${L}-480w.webp`}
+              srcset={`${L}-480w.webp 480w, ${L}-960w.webp 960w`}
+              sizes="240px"
               alt="AvocatHârlău.ro – Chelaru, Botezatu, Chiperi"
               width="960"
-              height="167" loading="lazy" decoding="async"
+              height="167"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
-          <p>
-            Consultanță și reprezentare juridică pentru clienții din Hârlău și zona Cotnari. Membră a Baroului Iași din
-            {SITE.since}.
-          </p>
+          <p>{SITE.tagline}</p>
+          <ul class="footer__social">
+            <li><a href={SITE.facebook} target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href={SITE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          </ul>
         </div>
-        <nav aria-label="Servicii">
-          <p class="footer__title">Servicii</p>
-          <ul>
-            {SERVICES.map((s) => <li><a href={`/servicii/${s.slug}`}>{s.title}</a></li>)}
-          </ul>
-        </nav>
-        <nav aria-label="Pagini">
-          <p class="footer__title">Cabinet</p>
-          <ul>
-            {NAV.filter((n) => n.href !== "/servicii").map((n) => <li><a href={n.href}>{n.label}</a></li>)}
-          </ul>
-        </nav>
         <div>
           <p class="footer__title">Contact</p>
-          <ul>
-            <li><a href={SITE.phoneHref}>{SITE.phone}</a></li>
-            <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
-            <li>{SITE.hours}</li>
+          <ul class="footer__people">
+            {
+              TEAM.map((p) => (
+                <li>
+                  <span class="footer__name">{p.name}</span>
+                  <a href={p.phoneHref}>{p.phone}</a>
+                </li>
+              ))
+            }
           </ul>
+          <p class="footer__line"><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+          <p class="footer__line">{SITE.address}</p>
         </div>
+        <nav aria-label="Domenii de activitate">
+          <p class="footer__title">Domenii de activitate</p>
+          <ul>
+            {FOOTER_AREAS.map((a) => <li><a href={`/${a.slug}`}>{a.title}</a></li>)}
+          </ul>
+        </nav>
+        <nav aria-label="Cabinet">
+          <p class="footer__title">Cabinet</p>
+          <ul>
+            <li><a href="/despre-noi">Despre noi</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/politica-de-confidentialitate">Politica de confidențialitate</a></li>
+            <li><a href="/termeni-si-conditii">Termeni și condiții</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="wrap footer__bottom">
-        <p>© {new Date().getFullYear()} Cabinet Avocat Andreea Chelaru</p>
-        <p><a href="/">avocatharlau.ro</a></p>
+        <p>© {new Date().getFullYear()} {SITE.name} – {SITE.firm}. Toate drepturile rezervate.</p>
+        <nav class="footer__legal" aria-label="Legal">
+          <a href="/politica-de-confidentialitate">Politica de confidențialitate</a>
+          <a href="/termeni-si-conditii">Termeni și condiții</a>
+        </nav>
       </div>
     </footer>
 
     <nav class="sticky-cta" aria-label="Contact rapid">
       <a href={SITE.phoneHref}>Sună acum</a>
-      <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="/contact">Programare</a>
     </nav>
 
     <script is:inline>
@@ -209,6 +245,21 @@ const schemas = [legalService, ...jsonLd];
           btn.setAttribute("aria-expanded", String(!open));
           btn.setAttribute("aria-label", open ? "Deschide meniul" : "Închide meniul");
           nav.classList.toggle("is-open", !open);
+        });
+        var drop = document.querySelector(".nav__drop");
+        var dropBtn = drop.querySelector(".nav__drop-btn");
+        function setDrop(open) {
+          dropBtn.setAttribute("aria-expanded", String(open));
+          drop.classList.toggle("is-open", open);
+        }
+        dropBtn.addEventListener("click", function () {
+          setDrop(dropBtn.getAttribute("aria-expanded") !== "true");
+        });
+        document.addEventListener("click", function (e) {
+          if (!drop.contains(e.target)) setDrop(false);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") setDrop(false);
         });
         // Skip link without adding "#" to the URL.
         document.querySelector("[data-skip]").addEventListener("click", function (e) {

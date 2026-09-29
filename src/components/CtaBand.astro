@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Aveți nevoie de un avocat în Hârlău?",
-  text = "Sunați sau scrieți pe WhatsApp. Stabilim împreună dacă ne vedem online, la Iași sau la Hârlău.",
+  title = "Aveți nevoie de asistență juridică?",
+  text = "Contactați-ne pentru o consultație inițială. Suntem aici să vă ajutăm.",
 } = Astro.props;
 ---
 
@@ -19,8 +19,8 @@ const {
       <p>{text}</p>
     </div>
     <div class="hero__actions">
-      <a href={SITE.phoneHref} class="btn btn--gold">Sună · {SITE.phone}</a>
-      <a href={SITE.whatsapp} class="btn btn--ghost" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="/contact" class="btn btn--gold">Contactează-ne</a>
+      <a href={SITE.phoneHref} class="btn btn--ghost">{SITE.phone}</a>
     </div>
   </div>
 </section>

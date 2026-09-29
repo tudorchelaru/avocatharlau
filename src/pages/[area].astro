@@ -1,0 +1,126 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { SITE, AREAS, TEAM, type Area } from "../data/site";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return AREAS.map((area) => ({ params: { area: area.slug }, props: { area } }));
+}
+
+const { area } = Astro.props as { area: Area };
+const path = `/${area.slug}`;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `${area.title} – avocat Hârlău`,
+  serviceType: area.title,
+  description: area.seoDescription,
+  url: `${SITE.url}${path}`,
+  provider: { "@id": `${SITE.url}/#cabinet` },
+  areaServed: [
+    { "@type": "City", name: "Hârlău" },
+    { "@type": "AdministrativeArea", name: "Județul Iași" },
+  ],
+};
+
+const faqSchema = area.faq.length
+  ? [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: area.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ]
+  : [];
+---
+
+<Base title={area.seoTitle} description={area.seoDescription} path={path} jsonLd={[serviceSchema, ...faqSchema]}>
+  <PageHero
+    eyebrow="Domenii de activitate"
+    title={area.title}
+    lead={area.short}
+    crumbs={[{ label: area.title }]}
+  />
+
+  <section class="section">
+    <div class="wrap article">
+      <article class="prose">
+        {
+          area.blocks.map((b) =>
+            b.type === "ul" ? (
+              <ul class="checklist">
+                {b.items.map((i) => (
+                  <li>{i}</li>
+                ))}
+              </ul>
+            ) : b.type === "h2" ? (
+              <h2>{b.text}</h2>
+            ) : b.type === "h3" ? (
+              <h3>{b.text}</h3>
+            ) : (
+              <p>{b.text}</p>
+            ),
+          )
+        }
+
+        {
+          area.faq.length > 0 && (
+            <>
+              <h2>Întrebări frecvente</h2>
+              <div class="faq__list">
+                {area.faq.map((f) => (
+                  <details>
+                    <summary>{f.q}</summary>
+                    <p>{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </>
+          )
+        }
+      </article>
+
+      <aside class="aside">
+        <nav class="aside__card" aria-label="Domenii de activitate">
+          <p class="aside__title">Domenii de activitate</p>
+          <ul class="aside__links">
+            {
+              AREAS.map((a) => (
+                <li>
+                  <a href={`/${a.slug}`} aria-current={a.slug === area.slug ? "page" : undefined}>
+                    {a.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+        <div class="aside__card aside__card--dark">
+          <p class="eyebrow">Programare</p>
+          <p class="aside__title">Discutăm situația dumneavoastră</p>
+          <ul class="aside__people">
+            {
+              TEAM.map((p) => (
+                <li>
+                  <span>{p.name}</span>
+                  <a href={p.phoneHref}>{p.phone}</a>
+                </li>
+              ))
+            }
+          </ul>
+          <a href="/contact" class="btn btn--gold btn--block">Programează o consultație</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

@@ -1,8 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
-import ServiceIcon from "../components/ServiceIcon.astro";
 import CtaBand from "../components/CtaBand.astro";
-import { SITE, SERVICES, STEPS, LOCALITIES, GENERAL_FAQ, yearsOfPractice } from "../data/site";
+import { SITE, AREAS, LOCALITIES, STATS } from "../data/site";
 
 export const prerender = true;
 
@@ -18,85 +17,51 @@ const website = {
 ---
 
 <Base
-  title="Avocat Hârlău | Andreea Chelaru – Baroul Iași"
-  description="Avocat în Hârlău – Andreea Chelaru, Baroul Iași. Divorț, succesiuni, dreptul muncii, contestare amenzi. Reprezentare la Judecătoria Hârlău."
+  title="Avocat Hârlău – Chelaru, Botezatu, Chiperi | AvocatHârlău.ro"
+  description="Casa de avocatură Chelaru | Botezatu | Chiperi – peste 22 de ani de experiență. Dreptul familiei, drept civil, penal, imigrări, executări silite pentru clienții din Hârlău."
   path="/"
   jsonLd={[website]}
 >
-  <link
-    slot="head"
-    rel="preload"
-    as="image"
-    href="/images/avocat-harlau-andreea-chelaru-700.webp"
-    imagesrcset="/images/avocat-harlau-andreea-chelaru-700.webp 700w, /images/avocat-harlau-andreea-chelaru-1260.webp 1260w"
-    imagesizes="(max-width: 800px) 82vw, 460px"
-  />
-
-  <section class="hero">
-    <div class="wrap hero__grid">
-      <div class="hero__copy">
-        <p class="eyebrow">Avocat în Hârlău · Baroul Iași din {SITE.since}</p>
-        <h1>
-          Avocat în Hârlău,<br />
-          <em>sprijin juridic clar, aproape de casă.</em>
-        </h1>
-        <p class="hero__lede">
-          Sunt Andreea Chelaru, avocat în Baroul Iași. Ofer consultanță și reprezentare juridică pentru clienții din
-          Hârlău și zona Cotnari, cu rigoare, empatie și transparență în fiecare dosar.
-        </p>
-        <div class="hero__actions">
-          <a href={SITE.phoneHref} class="btn btn--gold">Sună acum</a>
-          <a href={SITE.whatsapp} class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Scrie pe WhatsApp</a>
-        </div>
-        <dl class="stats">
-          <div>
-            <dt>{yearsOfPractice()}+</dt>
-            <dd>ani de practică</dd>
-          </div>
-          <div>
-            <dt>{SERVICES.length}</dt>
-            <dd>arii de practică</dd>
-          </div>
-          <div>
-            <dt>Online</dt>
-            <dd>sau la cabinet</dd>
-          </div>
-        </dl>
+  <section class="hero hero--text">
+    <div class="wrap">
+      <p class="eyebrow">Chelaru · Botezatu · Chiperi</p>
+      <h1>
+        Casa de avocatură<br />
+        <em>pentru Hârlău și împrejurimi</em>
+      </h1>
+      <p class="hero__lede">{SITE.tagline}</p>
+      <div class="hero__actions">
+        <a href="/contact" class="btn btn--gold">Programează o consultație</a>
+        <a href="/despre-noi" class="btn btn--ghost">Despre noi</a>
       </div>
-      <figure class="hero__media">
-        <img
-          src="/images/avocat-harlau-andreea-chelaru-700.webp"
-          srcset="/images/avocat-harlau-andreea-chelaru-700.webp 700w, /images/avocat-harlau-andreea-chelaru-1260.webp 1260w"
-          sizes="(max-width: 800px) 82vw, 460px"
-          alt="Avocat Andreea Chelaru – consultanță juridică în Hârlău"
-          width="1260"
-          height="1890"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </figure>
+      <dl class="stats">
+        {
+          STATS.map((s) => (
+            <div>
+              <dt>{s.value}</dt>
+              <dd>{s.label}</dd>
+            </div>
+          ))
+        }
+      </dl>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <header class="section__head">
-        <p class="eyebrow eyebrow--dark">Arii de practică</p>
-        <h2>Servicii juridice pentru Hârlău și împrejurimi</h2>
-        <p class="section__intro">
-          Domeniile cel mai des solicitate de clienții din Hârlău și din comunele arondate Judecătoriei Hârlău.
-        </p>
+        <p class="eyebrow eyebrow--dark">Ce facem</p>
+        <h2>Domenii de activitate</h2>
       </header>
-      <ul class="cards">
+      <ul class="cards cards--areas">
         {
-          SERVICES.map((s) => (
+          AREAS.map((a) => (
             <li class="card card--link">
-              <ServiceIcon name={s.icon} />
               <h3>
-                <a href={`/servicii/${s.slug}`}>{s.title}</a>
+                <a href={`/${a.slug}`}>{a.title}</a>
               </h3>
-              <p>{s.short}</p>
-              <span class="card__more" aria-hidden="true">Detalii →</span>
+              <p>{a.short}</p>
+              <span class="card__more" aria-hidden="true">Află mai multe →</span>
             </li>
           ))
         }
@@ -109,44 +74,21 @@ const website = {
       <div class="about__quote">
         <span class="about__mark" aria-hidden="true">“</span>
         <blockquote>
-          Fiecare dosar este tratat cu rigoare juridică, empatie și transparență, astfel încât să știți mereu unde ne
-          aflăm și care sunt pașii următori.
+          Abordăm fiecare caz cu profesionalism, dedicare și atenție la detalii, punând interesele clienților noștri pe
+          primul loc.
         </blockquote>
-        <p class="about__sign">Andreea Chelaru</p>
+        <p class="about__sign">Chelaru · Botezatu · Chiperi</p>
       </div>
       <div class="about__text">
-        <p class="eyebrow eyebrow--dark">Despre</p>
-        <h2>Un avocat din Baroul Iași, pentru comunitatea din Hârlău</h2>
+        <p class="eyebrow eyebrow--dark">Despre noi</p>
+        <h2>De ce să ne alegeți?</h2>
         <p>
-          Profesez în Baroul Iași din {SITE.since}. Lucrez cu clienți din Hârlău și din comunele din jur, în special pe
-          dreptul familiei, drept civil, dreptul muncii și drept contravențional.
+          Cu o experiență de peste 22 de ani în domeniul juridic, cabinetul nostru de avocatură oferă servicii complete
+          de consultanță și reprezentare. Abordăm fiecare caz cu profesionalism, dedicare și atenție la detalii, punând
+          interesele clienților noștri pe primul loc.
         </p>
-        <p>
-          Reprezint clienți în fața Judecătoriei Hârlău și a Tribunalului Iași, indiferent dacă locuiți în oraș sau în
-          comunele limitrofe.
-        </p>
-        <a href="/despre" class="link-arrow">Mai multe despre mine</a>
+        <a href="/despre-noi" class="link-arrow">Află mai multe despre noi</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <header class="section__head">
-        <p class="eyebrow eyebrow--dark">Cum lucrez</p>
-        <h2>De la primul telefon până la hotărâre</h2>
-      </header>
-      <ol class="steps">
-        {
-          STEPS.map((s, i) => (
-            <li class="step">
-              <span class="step__num">{String(i + 1).padStart(2, "0")}</span>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-            </li>
-          ))
-        }
-      </ol>
     </div>
   </section>
 
@@ -156,33 +98,12 @@ const website = {
         <p class="eyebrow">Zona deservită</p>
         <h2>Hârlău și comunele arondate Judecătoriei Hârlău</h2>
         <p>
-          Consultanță online sau la cabinetul din Iași, cu posibilitatea deplasării la Hârlău pe bază de programare.
+          Consultanță online sau la sediul din Iași, cu posibilitatea deplasării la Hârlău pe bază de programare.
         </p>
-        <a href="/zona-deservita" class="link-arrow link-arrow--light">Vezi zona deservită</a>
       </div>
       <ul class="chips" aria-label="Localități deservite">
         {LOCALITIES.map((l) => <li>{l}</li>)}
       </ul>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap faq">
-      <header class="section__head section__head--left">
-        <p class="eyebrow eyebrow--dark">Întrebări frecvente</p>
-        <h2>Ce ne întreabă cel mai des clienții</h2>
-        <a href="/intrebari-frecvente" class="link-arrow">Toate întrebările</a>
-      </header>
-      <div class="faq__list">
-        {
-          GENERAL_FAQ.slice(0, 3).map((item) => (
-            <details>
-              <summary>{item.q}</summary>
-              <p>{item.a}</p>
-            </details>
-          ))
-        }
-      </div>
     </div>
   </section>
 

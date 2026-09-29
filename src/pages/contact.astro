@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
-import { SITE } from "../data/site";
+import { SITE, TEAM } from "../data/site";
 
 export const prerender = true;
 
@@ -14,56 +14,142 @@ const contactPage = {
 ---
 
 <Base
-  title="Contact – Programare consultație avocat Hârlău"
-  description={`Programați o consultație cu avocat Andreea Chelaru: telefon ${SITE.phone}, WhatsApp sau email. Online, la cabinetul din Iași sau la Hârlău.`}
+  title="Contact – Avocat Hârlău"
+  description="Contactați casa de avocatură Chelaru | Botezatu | Chiperi. Telefon, email și adresă pentru programări și consultații juridice pentru clienții din Hârlău."
   path="/contact"
   jsonLd={[contactPage]}
 >
   <PageHero
     eyebrow="Contact"
-    title="Programați o consultație"
-    lead="Cel mai rapid mă găsiți la telefon sau pe WhatsApp. Stabilim împreună dacă ne vedem online, la Iași sau la Hârlău."
+    title="Contactați-ne"
+    lead="Casa de avocatură Chelaru | Botezatu | Chiperi — peste 22 de ani de experiență pe piața plină de provocări din România."
     crumbs={[{ label: "Contact" }]}
   />
 
   <section class="section">
     <div class="wrap contact">
-      <div class="contact__intro">
+      <div class="contact__info">
         <h2>Date de contact</h2>
-        <p>
-          Pentru o primă evaluare, pregătiți pe scurt situația și, dacă aveți, documentele relevante: contracte,
-          hotărâri, procese-verbale sau notificări.
-        </p>
-        <div class="hero__actions">
-          <a href={SITE.phoneHref} class="btn btn--gold">Sună · {SITE.phone}</a>
-          <a href={SITE.whatsapp} class="btn btn--outline" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        </div>
+        <ul class="contact__people">
+          {
+            TEAM.map((p) => (
+              <li>
+                <picture>
+                  <source type="image/avif" srcset={`/images/echipa/${p.slug}-400w.avif`} />
+                  <img
+                    src={`/images/echipa/${p.slug}-400w.webp`}
+                    alt={`Avocat ${p.name}`}
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <div>
+                  <span class="contact__name">{p.name}</span>
+                  <a href={p.phoneHref}>{p.phone}</a>
+                  <a href={p.whatsapp} target="_blank" rel="noopener noreferrer" class="contact__wa">WhatsApp</a>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <address class="contact__list">
+          <div>
+            <span class="contact__label">Email</span>
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </div>
+          <div>
+            <span class="contact__label">Adresă</span>
+            <span>
+              {SITE.address}<br />
+              <a href={SITE.googleMaps} target="_blank" rel="noopener noreferrer" class="contact__map">Google Maps</a>
+              ·
+              <a href={SITE.appleMaps} target="_blank" rel="noopener noreferrer" class="contact__map">Apple Maps</a>
+            </span>
+          </div>
+          <div>
+            <span class="contact__label">Hârlău</span>
+            <span>{SITE.officeHarlau}</span>
+          </div>
+          <div>
+            <span class="contact__label">Program</span>
+            <span>{SITE.hours}</span>
+          </div>
+        </address>
       </div>
-      <address class="contact__list">
-        <div>
-          <span class="contact__label">Telefon</span>
-          <a href={SITE.phoneHref}>{SITE.phone}</a>
-        </div>
-        <div>
-          <span class="contact__label">Email</span>
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-        </div>
-        <div>
-          <span class="contact__label">Cabinet Iași</span>
-          <span>
-            {SITE.officeIasi}<br />
-            <a href={SITE.mapsUrl} target="_blank" rel="noopener noreferrer" class="contact__map">Deschide în Google Maps</a>
-          </span>
-        </div>
-        <div>
-          <span class="contact__label">Cabinet Hârlău</span>
-          <span>{SITE.officeHarlau}</span>
-        </div>
-        <div>
-          <span class="contact__label">Program</span>
-          <span>{SITE.hours}</span>
-        </div>
-      </address>
+
+      <div class="contact__form-wrap">
+        <h2>Formular de contact</h2>
+        <form class="contact-form" method="post" action="/api/contact" novalidate>
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+          <label>
+            <span>Nume</span>
+            <input name="name" type="text" autocomplete="name" required maxlength="120" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" maxlength="160" />
+          </label>
+          <label>
+            <span>Telefon</span>
+            <input name="phone" type="tel" autocomplete="tel" maxlength="40" />
+          </label>
+          <label>
+            <span>Mesaj</span>
+            <textarea name="message" rows="6" required maxlength="5000"></textarea>
+          </label>
+          <label class="hp" aria-hidden="true">
+            <span>Website</span>
+            <input name="website" type="text" tabindex="-1" autocomplete="off" />
+          </label>
+          <button type="submit" class="btn btn--gold">Trimite mesajul</button>
+          <p class="form-note">
+            Datele transmise sunt prelucrate conform <a href="/politica-de-confidentialitate">Politicii de confidențialitate</a>.
+            Trimiterea unui mesaj nu creează o relație avocat-client.
+          </p>
+        </form>
+      </div>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      var form = document.querySelector(".contact-form");
+      var status = form.querySelector(".form-status");
+      var btn = form.querySelector("button[type=submit]");
+      function show(ok, msg) {
+        status.hidden = false;
+        status.className = "form-status " + (ok ? "is-ok" : "is-error");
+        status.textContent = msg;
+      }
+      var q = new URLSearchParams(location.search).get("status");
+      if (q === "ok") show(true, "Mesajul a fost trimis. Vă vom contacta în cel mai scurt timp.");
+      if (q === "eroare") show(false, "A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou sau să ne sunați.");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var d = new FormData(form);
+        if (!d.get("name") || !d.get("message") || (!d.get("email") && !d.get("phone"))) {
+          show(false, "Completați numele, mesajul și un email sau un telefon.");
+          return;
+        }
+        btn.disabled = true;
+        fetch(form.action, { method: "POST", body: d, headers: { Accept: "application/json" } })
+          .then(function (r) { return r.json(); })
+          .then(function (res) {
+            if (res.ok) {
+              form.reset();
+              show(true, "Mesajul a fost trimis. Vă vom contacta în cel mai scurt timp.");
+            } else {
+              show(false, (res.error || "A apărut o eroare.") + " Ne puteți suna la " + "0744 484 136.");
+            }
+          })
+          .catch(function () {
+            show(false, "A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou sau să ne sunați.");
+          })
+          .finally(function () { btn.disabled = false; });
+      });
+    })();
+  </script>
 </Base>

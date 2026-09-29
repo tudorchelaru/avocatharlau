@@ -1,0 +1,661 @@
+{
+ "familie": {
+  "title": "Dreptul familiei",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Familia este o formă socială de bază, realizată prin căsătorie, care unește pe soți (părinți) și pe descendenții acestora (copiii necăsătoriți) formând un tot unitar."
+   },
+   {
+    "type": "p",
+    "text": "Familia trebuie să fie susținută, încurajată de fiecare stat în parte, garantând libertatea, egalitatea și respectarea drepturilor membrilor familiei."
+   },
+   {
+    "type": "p",
+    "text": "Formarea unei astfel de celule trebuie pe lângă factorul iubire să aibă în vedere și factorul patrimoniu, factorul de egalitate în drepturi dar și în obligații."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii pentru formarea familiei"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Întocmiri convenție matrimonială — contract prenupțial — separarea bunurilor înainte de încheierea căsătoriei",
+     "Acțiuni în instanță pentru recunoașteri / tăgadă paternitate",
+     "Adopția de copii"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "Servicii în situații de neînțelegeri familiale"
+   },
+   {
+    "type": "p",
+    "text": "Alteori, însă, această unitate eșuează, ajungând ca relațiile din interiorul familiei să sufere schimbări în așa măsură încât se ajunge la neînțelegeri între soți sau între părinți și copii."
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Asistare / reprezentare divorțuri",
+     "Asistare / reprezentare partaje de bunuri comune",
+     "Asistare / reprezentare situații de abandonuri copii",
+     "Solicitări de stabilire / modificare pensie de întreținere între foștii soți sau față de copiii lor minori"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "Abordarea noastră"
+   },
+   {
+    "type": "p",
+    "text": "Cabinetul nostru de avocatură oferă servicii juridice profesioniste în situații litigioase de dreptul familiei, putând consilia părțile în toate aspectele juridice menționate, pentru ajungerea la un echilibru comun în relațiile de familie pentru părțile implicate."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Cât durează un proces de divorț?",
+    "a": "Durata depinde de forma divorțului și de complexitatea cauzei. Un divorț prin acordul soților se poate finaliza în câteva săptămâni, în timp ce un divorț cu cereri privind custodia sau partajul poate dura considerabil mai mult. La prima consultație vă putem oferi o estimare pentru situația dumneavoastră concretă."
+   },
+   {
+    "q": "Divorț la notar sau în instanță — care este varianta potrivită?",
+    "a": "Divorțul la notar este posibil doar prin acordul ambilor soți asupra tuturor aspectelor, inclusiv al celor privind copiii minori. Dacă există neînțelegeri privind custodia, pensia de întreținere sau partajul, este necesară instanța. Vă putem consilia asupra variantei potrivite și vă reprezentăm în ambele proceduri."
+   },
+   {
+    "q": "Cum se stabilește custodia copilului?",
+    "a": "Instanța decide întotdeauna în funcție de interesul superior al copilului. Regula este autoritatea părintească comună, iar locuința copilului se stabilește la unul dintre părinți, ținând cont de vârsta copilului, de legăturile afective și de condițiile oferite de fiecare părinte."
+   },
+   {
+    "q": "Ce acte sunt necesare pentru a începe un divorț?",
+    "a": "În general: certificatul de căsătorie, certificatele de naștere ale copiilor minori și actele de identitate. În funcție de cererile formulate pot fi necesare și alte documente — vă ghidăm pas cu pas la prima întâlnire."
+   }
+  ]
+ },
+ "imigrari": {
+  "title": "Imigrări",
+  "blocks": [
+   {
+    "type": "h2",
+    "text": "Servicii de imigrare"
+   },
+   {
+    "type": "p",
+    "text": "Consultanță juridică în materie de imigrări"
+   },
+   {
+    "type": "p",
+    "text": "Asistarea / reprezentarea clientului în procedura de obținere a avizului de angajare sau detașare pentru lucrători străini — consultanță juridică, întocmirea dosarului pentru obținerea avizului, obținerea documentelor necesare de la alte autorități române, programarea online a cererii pe portalul Inspectoratului pentru Imigrări, reprezentarea clientului în fața Inspectoratului pentru Imigrări pentru înregistrarea cererii, eliberarea avizului"
+   },
+   {
+    "type": "p",
+    "text": "Asistarea clientului în procedura de obținere a permisului de muncă — consultanță juridică, întocmirea dosarului pentru obținerea permisului, programarea online a cererii pe portalul Inspectoratului pentru Imigrări, asistarea în fața Inspectoratului pentru Imigrări pentru înregistrarea cererii"
+   },
+   {
+    "type": "p",
+    "text": "Asistarea / reprezentarea clientului în procedura de schimbare a angajatorului"
+   },
+   {
+    "type": "p",
+    "text": "Asistarea clientului în procedura de obținere a permisului de ședere pentru reîntregirea familiei — consultanță juridică, întocmirea dosarului pentru obținerea permisului, programarea online a cererii pe portalul Inspectoratului pentru Imigrări, asistarea în fața Inspectoratului pentru Imigrări pentru înregistrarea cererii"
+   },
+   {
+    "type": "p",
+    "text": "Asistarea / reprezentarea clientului în procedura de obținere a unei invitații pentru cetățeni străini în scop de vizită, turism sau afaceri"
+   }
+  ],
+  "faq": [
+   {
+    "q": "Ce documente sunt necesare pentru un permis de ședere în România?",
+    "a": "Documentele diferă în funcție de scopul șederii: angajare, studii, reîntregirea familiei sau activități comerciale. În general sunt necesare pașaportul, viza de lungă ședere, dovada locuinței și a mijloacelor de întreținere, plus documentele specifice scopului. Vă ajutăm să pregătiți dosarul complet pentru Inspectoratul General pentru Imigrări."
+   },
+   {
+    "q": "Cum obțin un permis de muncă pentru un angajat străin?",
+    "a": "Angajatorul solicită mai întâi avizul de angajare de la Inspectoratul General pentru Imigrări, apoi angajatul obține viza de lungă ședere pentru angajare și, după intrarea în țară, permisul unic. Asistăm atât angajatorii, cât și angajații pe tot parcursul procedurii."
+   },
+   {
+    "q": "Pot obține cetățenia română?",
+    "a": "Cetățenia română se poate obține, în condițiile legii, prin acordare — după o perioadă de ședere legală și continuă — sau prin redobândire, pentru foștii cetățeni și descendenții acestora. Condițiile includ cunoașterea limbii române și lipsa antecedentelor penale. Evaluăm situația dumneavoastră și vă asistăm în procedură."
+   }
+  ]
+ },
+ "civil": {
+  "title": "Drept civil",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Cel mai vast domeniu din știința Dreptului, problematicile de drept civil sunt omniprezente în viața de zi cu zi a societății civile, fiind supuse unei vaste reglementări legislative."
+   },
+   {
+    "type": "p",
+    "text": "Cabinetul nostru oferă reprezentare în fața instanțelor de judecată pentru probleme civile litigioase, indiferent de natura sau amploarea acestora."
+   },
+   {
+    "type": "h2",
+    "text": "Persoanele"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Capacitate juridică",
+     "Tutelă, curatelă",
+     "Rudenie, moșteniri",
+     "Paternitate, adopție",
+     "Protecția minorului",
+     "Partaje judiciare"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "Bunurile"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Drepturi reale, proprietate, posesie",
+     "Evacuări",
+     "Donații, testamente, moșteniri",
+     "Litigii contractuale și delictuale",
+     "Creanțe / debite"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "Răspunderi"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Răspundere contractuală",
+     "Răspundere delictuală",
+     "Malpraxis"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "Reprezentare în instanță"
+   },
+   {
+    "type": "p",
+    "text": "Vă putem reprezenta în fața oricărei instanțe de judecată pentru probleme civile, indiferent de natura sau amploarea acestora."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Ce tipuri de cauze civile preluați?",
+    "a": "Reprezentăm clienți în litigii privind proprietatea, succesiunile, obligațiile contractuale și delictuale, evacuări, partaje și recuperări de creanțe — indiferent de natura sau amploarea cauzei."
+   },
+   {
+    "q": "Cum se stabilește onorariul?",
+    "a": "Onorariul se stabilește transparent, la prima consultație, în funcție de complexitatea cauzei și de volumul de muncă estimat. Orice cost suplimentar se discută întotdeauna în prealabil."
+   },
+   {
+    "q": "Cât durează un proces civil?",
+    "a": "Durata variază semnificativ în funcție de instanță, de complexitatea probelor și de eventualele căi de atac — de la câteva luni la câțiva ani. După analiza dosarului vă putem oferi o estimare realistă."
+   }
+  ]
+ },
+ "penal": {
+  "title": "Drept penal",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Situația economică actuală, raportată la dificultățile nivelului de trai, conjugată cu o legislație permisivă în domeniu dar și cu alți factori auxiliari subiectivi, formează din dreptul penal o problematică complexă care trebuie tratată în toate cazurile cu maximă seriozitate dar și severitate."
+   },
+   {
+    "type": "p",
+    "text": "Înmulțirea și diversificarea faptelor infracționale incumbă nevoia de celeritate în prevenirea dar mai ales în combaterea lor, aspect ce duce uneori la săvârșirea de abateri grave din partea organelor de cercetare penală sau instanțe, care dacă nu sunt depistate și înlăturate la timp printr-o atentă analiză efectuată printr-o apărare calificată, pot duce la apariția unor grave erori judiciare."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii juridice în materie penală"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Consultanță juridică în materie penală cu privire la fapte ce intră sub incidența legii penale și a regimului lor sancționator",
+     "Redactarea plângerilor penale, pregătirea dosarelor, răspunsuri la solicitările organelor de cercetare penală și reprezentarea intereselor clientului în fața organelor de cercetare penală",
+     "Asistare / reprezentare în fața organelor de anchetă (poliție și procuratură) în faza de urmărire penală",
+     "Asistare / reprezentare în faza de judecată în cauze penale indiferent de natura infracțiunii",
+     "Asistare în faza de executare a pedepsei — contestații la executare, transferuri din penitenciare, acțiuni de suspendare a executării pedepsei sau liberare provizorie"
+    ]
+   }
+  ],
+  "faq": [
+   {
+    "q": "Când ar trebui să contactez un avocat într-un dosar penal?",
+    "a": "Cât mai devreme posibil — ideal înainte de prima audiere. Asistența unui avocat încă din faza de urmărire penală vă protejează drepturile și poate influența decisiv cursul dosarului."
+   },
+   {
+    "q": "Ce drepturi am dacă sunt chemat la audieri?",
+    "a": "Aveți dreptul de a fi asistat de un avocat, dreptul de a nu da declarații împotriva propriei persoane și dreptul de a consulta dosarul, în condițiile legii. Vă recomandăm să nu dați declarații înainte de a discuta cu un avocat."
+   },
+   {
+    "q": "Asigurați apărarea și în faza de judecată?",
+    "a": "Da. Asigurăm asistență și reprezentare pe tot parcursul procesului penal: urmărire penală, camera preliminară, judecata în fond și căile de atac."
+   }
+  ]
+ },
+ "drept-bancar-si-fiscal": {
+  "title": "Drept bancar și fiscal",
+  "blocks": [
+   {
+    "type": "h2",
+    "text": "1. Drept bancar"
+   },
+   {
+    "type": "p",
+    "text": "Cabinetul nostru conștientizează rolul extrem de important pe care îl are finanțarea pentru orice societate și pentru economie în ansamblu. De asemenea, apreciem că dreptul bancar este o ramură complexă și tehnică, dar în același timp un domeniu dinamic, în continuă schimbare care oferă în fiecare zi noi și noi provocări pentru practicieni. În consecință, suntem pregătiți să oferim soluții de actualitate în materie financiar-bancară pentru a răspunde prompt și eficient nevoilor clienților noștri."
+   },
+   {
+    "type": "p",
+    "text": "Oferim soluții legale inovatoare, adaptate specificului dreptului bancar, dintr-o dublă perspectivă (juridică și economică), cu privire la o gamă variată de probleme, cum ar fi:"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Redactarea, încheierea, modificarea, executarea, încetarea, rezilierea/rezoluțiunea sau orice alte aspecte legate de contractele bancare (contractul de credit, contractul de card bancar, depozitul bancar de fonduri, contractul pentru operațiuni în contul curent de disponibilități, contractul de închiriere a casetelor de valori etc.)",
+     "Consultanță, asistență și reprezentare în litigii privind aspecte legate de garanții mobiliare și imobiliare, precum și alte forme specifice de garantare bancară (ipotecă, gaj, fideiusiune, scrisoare de garanție, scrisoare de confort etc.)",
+     "Consultanță în obținerea documentației necesare în vederea obținerii unui credit sau împrumut bancar, inclusiv consiliere în materia tranzacțiilor internaționale (credite sindicalizate, finanțare transfrontalieră etc.), precum și consiliere economico-juridică în materia finanțării și refinanțării",
+     "Reprezentare, asistență și consultanță juridică în ce privește clauzele abuzive",
+     "Reprezentare, asistență și consultanță juridică de specialitate pentru consumatorii de credite și alte produse bancare în litigii cu instituțiile de credit"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "2. Dreptul asigurărilor"
+   },
+   {
+    "type": "p",
+    "text": "Trăim într-un mediu caracterizat prin incertitudine în care suntem expuși zilnic la mai multe forme de risc. În acest context s-a dezvoltat ramura juridică specializată a dreptului asigurărilor care, în ultima perioadă, ridică probleme complexe de reglementare și interpretare."
+   },
+   {
+    "type": "p",
+    "text": "Cabinetul utilizează cunoștințele multidisciplinare și experiența acumulată în domeniile economic și juridic pentru a veni în sprijinul celor care au nevoie de consultanță, asistență sau reprezentanță juridică de specialitate în materia dreptului asigurărilor."
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Înființarea și autorizarea societăților de asigurare, reasigurare ori intermediere în asigurări, precum și a dezmembrămintelor acestora",
+     "Constituirea și autorizarea agenților de asigurare",
+     "Elaborarea, încheierea, modificarea, executarea, rezilierea și încetarea contractelor de asigurare și reasigurare",
+     "Litigii prin care se solicită daune morale și materiale rezultate din accidente sau de altă natură, dezastre naturale, călătorii în străinătate, malpraxis medical etc."
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "3. Drept administrativ și fiscal"
+   },
+   {
+    "type": "p",
+    "text": "Cabinetul nostru consideră că pentru realizarea unei întreprinderi de succes sunt întotdeauna necesare cunoștințe de drept administrativ și fiscal. Totuși, reglementările în această materie se caracterizează printr-o efervescență sporită prin comparație cu restul legislației. Prin urmare, pentru a fi permanent conectați la noile realități în domeniu este necesară o continuă actualizare, aprofundare și completare a cunoștințelor."
+   },
+   {
+    "type": "p",
+    "text": "Suntem pregătiți să oferim soluții ingenioase, adaptate specificului afacerii clienților noștri, atât din perspectivă juridică, cât și economică (implicit și contabilă), pentru a răspunde în mod eficient nevoilor dumneavoastră."
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Consultanță fiscală de specialitate în materia impozitului pe profit, impozitului pe venit, taxei pe valoarea adăugată, accizelor, taxelor și tarifelor vamale, impozitelor și taxelor locale, contribuțiilor la sistemul public de asigurări sociale, precum și cu privire la orice taxă sau impozit prevăzut de legislația în vigoare",
+     "Consultanță și asistență în vederea înregistrării fiscale și asistență fiscală de specialitate în timpul controalelor efectuate de autorități fiscale",
+     "Consultanță fiscală privind evitarea dublei impuneri precum și reprezentanță în relația cu autorități fiscale",
+     "Asistență și reprezentare în litigiile în materia contenciosului administrativ și fiscal",
+     "Consultanță, asistență și reprezentare în orice problemă legată de fiscalitate",
+     "Încheierea de contracte administrative, inclusiv de achiziții publice, precum și alte aspecte civile și comerciale în dreptul administrativ"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "4. Piețe de capital"
+   },
+   {
+    "type": "p",
+    "text": "Piața de capital constituie un domeniu extrem de dinamic, tehnic și complex."
+   },
+   {
+    "type": "p",
+    "text": "Printr-o pregătire multidisciplinară și interdisciplinară, ne permitem abordarea din perspectivă juridico-financiară a problemelor care pot apărea pe piețele de capital românești sau din străinătate."
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Tranzacții și operațiuni locale și internaționale cu valori mobiliare, contracte futures, contracte forward, instrumente derivate și alte instrumente și produse financiare",
+     "Oferte publice, listări sau delistări ale societăților pe piețele reglementate",
+     "Redactarea, încheierea, modificarea sau încetarea contractelor de brokeraj, de administrare de fonduri etc.",
+     "Elaborarea, modificarea sau interpretarea regulamentelor și procedurilor interne ale burselor, Autorității de Supraveghere Financiară (ASF), societăților de servicii de investiții financiare (SSIF) și ale celorlalte organisme sau autorități care acționează pe piața de capital",
+     "Litigii în materia dreptului piețelor de capital"
+    ]
+   }
+  ],
+  "faq": []
+ },
+ "executari-silite": {
+  "title": "Executări silite",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Obținerea unei hotărâri judecătorești definitive nu reprezintă în toate situațiile finalizarea problemelor juridice. Nu de puține ori, debitorii ignoră hotărârea judecătorească așteptând ori trecerea timpului pentru intervenirea prescripției ori nu se supun hotărârii judecătorești datorită relei voințe."
+   },
+   {
+    "type": "p",
+    "text": "În aceste situații singura cale de executare silită a hotărârilor judecătorești o reprezintă Birourile de Executori Judecătorești iar Cabinetul nostru de Avocatură vă poate sprijini în procesul de executare silită, prin activități specifice acestei faze."
+   },
+   {
+    "type": "p",
+    "text": "Nu dați curs numeroaselor anunțuri prin care o serie de diletanți vă promit recuperarea creanțelor cu costuri zero sau plătibile doar în caz de succes. Orice demers juridic implică taxe juridice și onorarii care trebuiesc plătite cel puțin parte în avans; toate sumele vor fi suportate și recuperate în final de la debitor."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii juridice oferite"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Notificări / somații privind anunțarea începerii executării silite",
+     "Întocmirea formelor de solicitare a începerii executării silite",
+     "Asistarea / reprezentarea în cadrul Birourilor de Executori Judecătorești",
+     "Asistare / reprezentare în instanțe privind litigii execuționale",
+     "Recuperări de creanțe",
+     "Primirea în depozit de fonduri financiare și bunuri"
+    ]
+   }
+  ],
+  "faq": []
+ },
+ "amenzi-contraventii": {
+  "title": "Amenzi / Contravenții",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Aria sancțiunilor prin amenzi (contravențiile) este foarte vastă în legislația actuală a țării noastre, fiind privită ca o corijare de la abaterea normei sociale fără a avea gravitatea unei sancțiuni de ordin penal, însă fiind reglementate și urmărite mai drastic decât daunele din legislația civilă."
+   },
+   {
+    "type": "p",
+    "text": "Practic fiecare domeniu reglementat prin legislație are un capitol dedicat sancțiunilor în caz de abatere de la norma sa, aspect realizat prin stabilire de amenzi."
+   },
+   {
+    "type": "p",
+    "text": "Cu toate acestea reglementarea juridică a măsurii în sine, a drepturilor și obligațiilor persoanei sancționate contravențional pot fi rezumate printr-un singur act juridic — O.G. nr. 2/2001 care prevede reguli generale după care se poate contesta o amendă contravențională (diferit de amenzile penale)."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii oferite"
+   },
+   {
+    "type": "p",
+    "text": "Ținând seama atât de practica neunitară și aspectele controversate din practica judiciară, cât și de poziția Curții Europene a Drepturilor Omului referitoare la aplicarea, în materie contravențională, a principiilor de procedură penală care protejează drepturi fundamentale ale persoanei, regimul juridic al contravențiilor reprezintă o arie atent analizată de Cabinetul nostru de avocatură, oferind în acest sens:"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Consultanță în prevenția abaterilor contravenționale",
+     "Asistare în fața instanțelor competente cu privire la plângerile contravenționale ce fac obiectul litigiilor contravenționale"
+    ]
+   }
+  ],
+  "faq": []
+ },
+ "proprietate-intelectuala": {
+  "title": "Proprietate intelectuală",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Deținătorul proprietății intelectuale poate controla și trebuie răsplătit pentru uzul acesteia, și acest fapt încurajează inovația și creativitatea spre beneficiul umanității."
+   },
+   {
+    "type": "p",
+    "text": "Proprietatea intelectuală include produse, acțiuni sau procese pe care le-ați creat și care vă oferă un avantaj competitiv."
+   },
+   {
+    "type": "h2",
+    "text": "Categorii de proprietate intelectuală"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Proprietatea industrială — invenții (brevete), mărci înregistrate, desene industriale, noi varietăți de plante și indicații de origine geografică",
+     "Opere artistice protejate de drepturile de autor — lucrări literare și artistice originale, muzică, programe de radio și televiziune, software, baze de date, proiecte arhitecturale, creații publicitare și de multimedia",
+     "Strategii comerciale — secrete comerciale, know-how, acorduri de confidențialitate, producție rapidă"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "Cum vă puteți proteja drepturile"
+   },
+   {
+    "type": "p",
+    "text": "Vă puteți proteja proprietatea intelectuală cu ajutorul drepturilor stabilite de Organizația Mondială a Proprietății Intelectuale (OMPI). Forma de protecție depinde de tipul de proprietate intelectuală:"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Brevetele — vă permit să împiedicați părți terțe să fabrice, să utilizeze sau să vândă invenția dumneavoastră pe o anumită perioadă de timp, în funcție de tipul de invenție",
+     "Mărcile înregistrate — protejează numele produsului, împiedicând alte companii să vândă un produs cu aceeași denumire",
+     "Drepturile de autor — vă permit să controlați producția, distribuția, difuzarea sau reprezentarea publică a operei dumneavoastră. Drepturile de autor se acordă automat, fără să fie necesară înregistrarea oficială. Puteți folosi imediat simbolul drepturilor de autor (©)"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "Contrafacerea și pirateria"
+   },
+   {
+    "type": "p",
+    "text": "Contrafacerea (imitarea frauduloasă a unui produs de marcă) și pirateria (copierea neautorizată a unui produs protejat de drepturile de proprietate intelectuală) au atins proporții alarmante. Ele au implicații majore asupra inovației, creșterii, ocupării forței de muncă, siguranței și sănătății consumatorilor."
+   },
+   {
+    "type": "p",
+    "text": "În funcție de legislația națională și de țara de proveniență a bunurilor contrafăcute, autoritățile la care trebuie să apelați sunt autoritățile vamale, organismele de supraveghere a pieței (inspectoratele comerciale), poliția sau oficiile de brevete și mărci."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii oferite"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Consultanță în identificarea și posibilitatea de a pretinde drepturi de pe urma creațiilor realizate",
+     "Întocmirea documentației necesare fiecărei etape necesare la O.S.I.M. cu privire la drepturile de proprietate intelectuală",
+     "Protejarea (înregistrare, modificare) și urmărirea respectării dreptului protejat"
+    ]
+   }
+  ],
+  "faq": []
+ },
+ "accidente-auto-daune": {
+  "title": "Accidente auto / Daune",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Dacă ați fost implicat într-un accident grav, probabil vă simțiți copleșiți. S-ar putea să nu știți ce să faceți. Vă putem ajuta să înțelegeți opțiunile și să stabiliți pașii următori. Avem experiență în ajutarea clienților implicați în accidente cu prejudicii conexe."
+   },
+   {
+    "type": "h2",
+    "text": "Despăgubiri și drepturi"
+   },
+   {
+    "type": "p",
+    "text": "Persoanele implicate într-un accident rutier din vina altuia pot obține despăgubiri în vederea acoperirii prejudiciului material și moral suferit."
+   },
+   {
+    "type": "p",
+    "text": "Despăgubirile sunt disponibile chiar dacă:"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Autoturismul nu avea asigurare RCA sau CASCO",
+     "Autorul accidentului a părăsit locul faptei",
+     "Prejudiciile sunt doar materiale (avarierea vehiculului)"
+    ]
+   },
+   {
+    "type": "p",
+    "text": "În cazul în care autovehiculul nu avea asigurare, B.A.A.R. plătește din Fondul de Protecție a Victimelor Străzii. Despăgubirile acoperă prejudicii materiale și morale, inclusiv pentru pierderi în caz de deces."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii oferite"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Redactare plângeri și cereri în fața instanțelor civile",
+     "Asistare în fața organelor de cercetare penală",
+     "Colaborare cu experți în reconstrucție accidente",
+     "Negociere cu societățile de asigurări",
+     "Recuperare efectivă a sumelor prin executori judecătorești"
+    ]
+   }
+  ],
+  "faq": []
+ },
+ "contracte": {
+  "title": "Contracte",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Încheierea unui contract — obligații și drepturi reciproce ale părților cu valoare de lege — reprezintă poate cel mai banal act pe care oamenii îl semnează în societate."
+   },
+   {
+    "type": "p",
+    "text": "Un contract este definit ca fiind „acordul între două sau mai multe persoane cu intenția de a constitui, modifica sau stinge un raport juridic”."
+   },
+   {
+    "type": "p",
+    "text": "De aici o serie de efecte juridice care odată negociate și acceptate de către părți ajung să capete valoare de lege pentru ele, putând să ajungă a fi consfințite de o instanță de judecată sau chiar puse direct în executare silită de către un executor judecătoresc dacă nu se respectă de bunăvoie."
+   },
+   {
+    "type": "p",
+    "text": "Iată de ce la încheierea unor astfel de contracte, ce în general afectează nu doar partea subiectivă a vieții sociale dar în cele mai multe cazuri chiar partea financiară a părților semnatare, prezența unui avocat este nu doar recomandată dar considerăm noi chiar indispensabilă pentru explicarea și garantarea drepturilor/obligațiilor dar și pentru transpunerea voinței reale a părților în cuprinsul unui act."
+   },
+   {
+    "type": "h2",
+    "text": "Atestarea avocațială"
+   },
+   {
+    "type": "p",
+    "text": "În plus, posibilitatea ca avocatul să ateste actul încheiat certificând astfel identitatea părților, conținutul actului și data certă a semnării acestuia, face ca respectivul contract să capete puteri asemănătoare cu cele ale unui act autentificat de birourile notariale."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii oferite"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Întocmire, redactare contracte și alte acte juridice solicitate de client",
+     "Modele de contracte cu clauze prestabilite în funcție de nevoile clientului",
+     "Atestări de acte juridice oferind valoare juridică sporită prin: identificare părți semnatare, certificare conținut act, acordare de dată certă act"
+    ]
+   }
+  ],
+  "faq": []
+ },
+ "consultanta-negocieri-medieri": {
+  "title": "Consultanță, negocieri, medieri",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Oricine dorește rezolvarea unei probleme ivite, într-un timp cât mai repede posibil. Timpul implică efort și cheltuieli suplimentare. Deseori, pentru a evita ajungerea în fața instanțelor de judecată nu e nevoie decât de puțină bună-înțelegere."
+   },
+   {
+    "type": "p",
+    "text": "În acest sens, Cabinetul de Avocatură a avut în vedere întotdeauna ca punct de plecare în rezolvarea unei probleme, încercarea de a concilia părțile, de a ajunge la o rezolvare favorabilă prin negocieri."
+   },
+   {
+    "type": "h2",
+    "text": "Consultanță"
+   },
+   {
+    "type": "p",
+    "text": "Este punctul de pornire în înțelegerea unei situații apărute, fiind primul pas al legăturii dintre avocat și client într-o problemă juridică. Prezentarea problemei juridice cu care se confruntă clientul precum și detaliile ivirii acesteia, dau posibilitatea avocatului să ofere un sfat pertinent și profesionist cu privire la posibilitățile de rezolvare."
+   },
+   {
+    "type": "h2",
+    "text": "Mediere / Conciliere"
+   },
+   {
+    "type": "p",
+    "text": "În vederea soluționării în mod cât mai favorabil pentru părțile implicate într-un conflict juridic a neînțelegerilor apărute în derularea activităților, avocatul prin servicii specializate poate prezenta avantajele și dezavantajele poziției părților, urmând a-i sfătui în alegerea unei căi de mijloc."
+   },
+   {
+    "type": "h2",
+    "text": "Negocieri"
+   },
+   {
+    "type": "p",
+    "text": "Între părțile care din diferite motive au ajuns într-un impas în rezolvarea situației apărute, avocatul poate oferi soluții acceptabile de ambele părți asupra situațiilor conflictuale considerate de nerezolvat."
+   }
+  ],
+  "faq": []
+ },
+ "societati-comerciale": {
+  "title": "Societăți comerciale",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Una din cele mai dinamice domenii din instituția Dreptului, poate dezvolta o gamă largă de activități având în vedere strânsa legătură cu latura economică a societății."
+   },
+   {
+    "type": "p",
+    "text": "Pornind de la consultanță și înființări / modificări societăți comerciale și până la reprezentarea acestora în cadrul litigiilor comerciale (între profesioniști), Cabinetul nostru de avocatură oferă servicii juridice pentru orice tip de societate indiferent de forma de organizare sau obiectul de activitate desfășurat."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii oferite"
+   },
+   {
+    "type": "ul",
+    "items": [
+     "Consultanță (per serviciu sau pe bază de abonament) privind întreaga activitate juridică a unei societăți",
+     "Înființări societăți comerciale — întocmire acte necesare, depuneri de capital, acordare sedii sociale temporare în cadrul Cabinetului de avocatură, activități specifice în fața Registrului Comerțului",
+     "Modificări societate — întocmire, înregistrare modificare societate, cesiuni părți sociale, modificări sedii / puncte de lucru, avizări",
+     "Adunări generale ale asociaților / acționarilor — procedura de organizare, asistare, reprezentare pe bază de procură, înregistrare hotărâri, acțiuni în anularea hotărârilor, răspunderea administratorilor, convenții ale asociaților / acționarilor",
+     "Lichidări și dizolvări de societăți",
+     "Înființare / închidere de sucursale, filiale, puncte de lucru, reprezentanțe",
+     "Contracte comerciale — negocieri, redactări, inserări clauze în orice fel de contracte comerciale",
+     "Litigii comerciale — asistență / reprezentare în fața instanțelor de judecată la toate gradele de jurisdicție în probleme de drept comercial între societăți sau între persoane fizice și societăți"
+    ]
+   }
+  ],
+  "faq": []
+ },
+ "asociatii-si-fundatii": {
+  "title": "Asociații și fundații",
+  "blocks": [
+   {
+    "type": "p",
+    "text": "Mulți se întreabă probabil de ce ar face cineva orice pentru altul, fără a avea un beneficiu propriu? E o întrebare firească ce ar putea avea un răspuns și mai firesc: pentru că te face să te simți om."
+   },
+   {
+    "type": "p",
+    "text": "Te face să simți că ceea ce faci tu, ceea ce dai tu, contează pentru alții, iar atunci când acei care beneficiază sunt oameni care au multă nevoie de ceea ce oferi, le vezi zâmbetul recunoscător."
+   },
+   {
+    "type": "p",
+    "text": "Astfel de fapte se pot face printr-un cadru organizat, legal, instituționalizat prin intermediul asociațiilor sau fundațiilor non-profit, cunoscute generic ca Organizațiile Non-Profit."
+   },
+   {
+    "type": "h2",
+    "text": "Definiții"
+   },
+   {
+    "type": "p",
+    "text": "Asociația este subiectul de drept constituit de trei sau mai multe persoane care pun în comun fără drept de restituire contribuția materială, cunoștințele sau aportul lor în muncă pentru realizarea unor activități în interes general."
+   },
+   {
+    "type": "p",
+    "text": "Fundația este subiectul de drept înființat de una sau mai multe persoane care constituie un patrimoniu afectat, în mod permanent și irevocabil, realizării unui scop de interes general."
+   },
+   {
+    "type": "h2",
+    "text": "Servicii oferite"
+   },
+   {
+    "type": "p",
+    "text": "Cabinetul oferă servicii juridice pentru înființarea asociațiilor sau fundațiilor și modificarea actelor constitutive, cu sprijin fiscal-contabil pentru conformitatea cu legislația în vigoare."
+   }
+  ],
+  "faq": []
+ }
+}

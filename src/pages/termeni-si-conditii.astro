@@ -1,0 +1,93 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import { SITE } from "../data/site";
+
+export const prerender = true;
+const op = `${SITE.firm} (${SITE.name})`;
+---
+
+<Base
+  title="Termeni și condiții"
+  description={`Termenii și condițiile de utilizare a site-ului ${SITE.name}, operat de ${SITE.firm}.`}
+  path="/termeni-si-conditii"
+>
+  <PageHero title="Termeni și condiții" crumbs={[{ label: "Termeni și condiții" }]} />
+
+  <section class="section">
+    <div class="wrap article">
+      <div class="prose">
+        <p>
+          Vă rugăm să citiți cu atenție termenii și condițiile de utilizare a site-ului {SITE.url}, operat de {op}. Prin
+          accesarea și utilizarea acestui site, acceptați acești termeni în integralitate.
+        </p>
+
+        <h2>1. Informații generale</h2>
+        <p>
+          Acest site este operat de {op}, cu sediul în {SITE.address}. Site-ul are caracter informativ și prezintă
+          serviciile juridice oferite de cabinetul nostru.
+        </p>
+
+        <h2>2. Utilizarea site-ului</h2>
+        <p>
+          Conținutul acestui site este destinat exclusiv informării generale și nu constituie consultanță juridică.
+          Informațiile prezentate nu creează o relație avocat-client. Pentru consultanță juridică specifică situației
+          dumneavoastră, vă recomandăm să ne contactați direct.
+        </p>
+
+        <h2>3. Proprietate intelectuală</h2>
+        <p>
+          Întregul conținut al site-ului, incluzând texte, elemente grafice, design și structură, este proprietatea {op} și
+          este protejat de legislația română și internațională privind drepturile de autor și proprietatea intelectuală.
+          Reproducerea, distribuirea sau utilizarea conținutului fără acordul prealabil scris este interzisă.
+        </p>
+
+        <h2>4. Limitarea răspunderii</h2>
+        <p>
+          Depunem eforturi rezonabile pentru a asigura acuratețea informațiilor prezentate pe site, însă nu garantăm că
+          acestea sunt complete, actuale sau lipsite de erori. Utilizarea informațiilor de pe site se face pe propria
+          răspundere a utilizatorului.
+        </p>
+        <p>
+          Nu suntem răspunzători pentru eventualele daune directe sau indirecte rezultate din utilizarea sau
+          imposibilitatea utilizării acestui site.
+        </p>
+
+        <h2>5. Linkuri externe</h2>
+        <p>
+          Site-ul poate conține linkuri către site-uri terțe. Nu avem control asupra conținutului acestor site-uri și nu ne
+          asumăm responsabilitatea pentru conținutul sau politicile lor de confidențialitate.
+        </p>
+
+        <h2>6. Formularul de contact</h2>
+        <p>
+          Informațiile transmise prin formularul de contact sunt prelucrate conform
+          <a href="/politica-de-confidentialitate">Politicii de confidențialitate</a>. Trimiterea unui mesaj prin
+          formularul de contact nu creează o relație avocat-client și nu obligă cabinetul la furnizarea de servicii
+          juridice.
+        </p>
+
+        <h2>7. Legislația aplicabilă</h2>
+        <p>
+          Acești termeni și condiții sunt guvernați de legislația română. Orice litigiu va fi soluționat de instanțele
+          competente din Iași, România.
+        </p>
+
+        <h2>8. Modificări ale termenilor</h2>
+        <p>
+          Ne rezervăm dreptul de a modifica acești termeni și condiții în orice moment. Modificările intră în vigoare la
+          momentul publicării pe site. Continuarea utilizării site-ului după publicarea modificărilor constituie
+          acceptarea noilor termeni.
+        </p>
+
+        <h2>9. Contact</h2>
+        <p>Pentru orice întrebări legate de acești termeni și condiții, ne puteți contacta la:</p>
+        <ul class="checklist">
+          <li>Email: <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          <li>Telefon: <a href={SITE.phoneHref}>{SITE.phone}</a></li>
+          <li>Adresă: {SITE.address}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>
