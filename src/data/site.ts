@@ -5,7 +5,7 @@ export const SITE = {
   phone: "+40 744 484 136",
   phoneHref: "tel:+40744484136",
   whatsapp: "https://wa.me/40744484136",
-  email: "andreea@avocatchelaru.ro",
+  email: "contact@avocatharlau.ro",
   since: 2008,
   officeIasi: "Str. Anastasie Panu 23, Bloc Muntenia, Et. 1, Iași",
   officeHarlau: "În curând — programări prin telefon",
