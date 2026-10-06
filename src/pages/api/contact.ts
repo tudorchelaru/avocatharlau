@@ -1,13 +1,11 @@
 import type { APIRoute } from "astro";
 import nodemailer from "nodemailer";
 import { SITE } from "../../data/site";
+import { buildContactEmail } from "../../lib/contactEmail";
 
 export const prerender = false;
 
 const LIMITS = { name: 120, email: 160, phone: 40, message: 5000 };
-
-const escapeHtml = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
 function reply(request: Request, ok: boolean, error?: string) {
   if (request.headers.get("accept")?.includes("application/json")) {
@@ -59,11 +57,7 @@ export const POST: APIRoute = async ({ request }) => {
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
 
-  const rows = [
-    ["Nume", data.name],
-    ["Email", data.email || "—"],
-    ["Telefon", data.phone || "—"],
-  ];
+  const { html, text } = buildContactEmail(data);
 
   try {
     await transporter.sendMail({
@@ -71,10 +65,8 @@ export const POST: APIRoute = async ({ request }) => {
       to: CONTACT_TO || SITE.email,
       replyTo: data.email || undefined,
       subject: `Mesaj nou de pe ${SITE.name} – ${data.name}`,
-      text: `${rows.map(([k, v]) => `${k}: ${v}`).join("\n")}\n\nMesaj:\n${data.message}`,
-      html: `<table>${rows
-        .map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${escapeHtml(v)}</td></tr>`)
-        .join("")}</table><p><strong>Mesaj:</strong></p><p>${escapeHtml(data.message).replace(/\n/g, "<br>")}</p>`,
+      text,
+      html,
     });
   } catch (err) {
     console.error("[contact] sendMail failed:", err);
