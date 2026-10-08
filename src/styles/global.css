@@ -967,6 +967,30 @@ main:focus {
   margin: 0;
 }
 
+
+.footer__credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 22px;
+  font-size: 11.5px;
+}
+.footer__credit a {
+  display: inline-flex;
+}
+.footer__credit img {
+  display: block;
+  width: 126px;
+  height: auto;
+}
+.footer__credit a:focus-visible {
+  outline: 2px solid #0068fe;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .sticky-cta {
   display: none;
 }
