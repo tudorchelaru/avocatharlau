@@ -1,0 +1,16 @@
+# Imaginea comună — varianta cu fundal verde
+
+Generată cu instrumentul integrat image_gen, din cele trei fotografii originale, la cererea utilizatorului. Fundalul verde, ținutele și posturile originale au fost cerute explicit. Chipurile rămân reconstrucții AI și nu sunt garantat identice pixel cu pixel cu originalele. Portretele individuale din site rămân originale.
+
+Asset: `public/images/hero/avocati-birou-verde-ai-v2.png`; variante AVIF/WebP la 768, 1200 și 1536 px. Prima variantă a fost păstrată ca fișier, dar nu mai este folosită în hero.
+
+## Prompt
+
+Use case: compositing / identity-preserve.
+Create a faithful photographic COMPOSITE of the THREE ORIGINAL PHOTOGRAPHS provided, together in one office. The priority is keeping the real people unchanged, not making a glamorous new portrait.
+Reference 1: Andreea Chelaru, blonde woman in a dark blazer, looking DOWN toward her burgundy book. Reference 2: Răzvan Botezatu, bald man seated behind a desk, hands clasped, navy suit, white open-collar shirt. Reference 3: Roxana Chiperi, auburn-haired woman with dark eyeglasses, green short-sleeved blouse, jewelry, seated facing forward.
+CRITICAL INVARIANTS: retain the exact original face shapes, facial features, ages, skin texture, expressions, head angles, hairstyles, eyeglasses, body shapes, clothing, poses and visible hands of each original. Preserve Andreea's original side/downward-facing head; do NOT invent a frontal face for her. Preserve Răzvan's original straight-on face and expression, and Roxana's original straight-on face, expression and green blouse. Do NOT add a black blazer to Roxana. Do NOT slim, beautify, rejuvenate or retouch anyone. Treat these as photographic cutouts from the original images; reproduce their original facial pixels and details as faithfully as possible.
+Placement: Andreea on the left still holding and looking at her book, Răzvan seated in the middle as in his reference, Roxana seated on the right exactly as in hers. Exactly three adults. The shared desk is a simple medium-brown wood desk, understated and natural.
+BACKGROUND: preserve the muted sage/teal GREEN WALL from the original Răzvan and Roxana photographs as the main background, matching its real color, simple white ceiling trim and restrained original office feel. A narrow bookcase with legal books at the left may connect Andreea's original backdrop to the green wall. No opulent walnut library, no beige luxury office, no dramatic new scenery. Keep their original green-wall visual setting.
+Composition: landscape 3:2, waist-up, enough space around heads, all three people clearly visible and inside central 80 percent for responsive framing. Match camera heights, scale, lighting and perspective gently without changing the subjects themselves. Natural soft office daylight, modest realistic office photograph, realistic source-photo texture, NOT glossy stock photography.
+No writing, logos, watermarks, extra people or exaggerated cinematic color grading. The user's complaint was that the previous generation altered faces. This version must strongly prioritize preserving the exact original likenesses and original poses over creating a new aesthetically idealized photograph.

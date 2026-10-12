@@ -1,0 +1,126 @@
+import type { Article } from "../articles";
+
+export const MOSTENIREA_IN_FAMILIE_ARTICLE: Article = {
+  slug: "mostenirea-in-familie-drepturi-termene-conflicte",
+  title: "Moștenirea în familie: cine primește ce și ce faci când apar conflicte",
+  seoTitle: "Moștenirea în familie: drepturi, termene și ce faci când apar conflicte (ghid 2026)",
+  category: "Drept civil",
+  status: "published",
+  date: "2026-10-12",
+  authorSlug: "avocat-roxana-chiperi",
+  summary: "Nu te înțelegi cu frații la moștenire? Află cine moștenește, ce termene ai, cum se face partajul la notar sau în instanță și ce greșeli să eviți.",
+  tags: ["Moștenire", "Succesiune", "Partaj", "Rezervă succesorală", "Testament"],
+  sections: [
+    {
+      id: "mostenire-si-dispute-intre-frati",
+      title: "Moștenire și dispute între frați: nu rămâi blocat în indiviziune",
+      paragraphs: [
+        "Dacă nu vă înțelegeți cu frații la împărțirea moștenirii, aveți mai multe căi legale de ieșire: acord la notar, mediere sau acțiune în instanță.",
+        "Disputele apar, de regulă, când există un imobil de împărțit, un testament contestat, donații făcute în timpul vieții sau neînțelegeri despre cine a îngrijit părintele. Cel mai important este să nu pierzi termenele și să știi ce drepturi ai înainte de prima discuție tensionată.",
+        "Mai jos explicăm pe înțelesul tuturor cine moștenește, ce termene contează, ce este rezerva succesorală și cum se împarte, concret, moștenirea.",
+      ],
+    },
+    {
+      id: "cine-mosteneste-fara-testament",
+      title: "Cine moștenește când nu există testament",
+      paragraphs: ["Dacă defunctul nu a lăsat testament, moștenirea se împarte pe clase de moștenitori, iar clasa mai apropiată îi exclude pe cei din clasele următoare."],
+      table: {
+        head: ["Clasă", "Cine face parte din ea", "Observații"],
+        rows: [
+          ["I", "Descendenții: copii, iar dacă un copil a murit, nepoții", "Copiii moștenesc în părți egale, deci frații împart în mod egal"],
+          ["II", "Părinții, frații și surorile, nepoții de frate", "Se aplică dacă nu există descendenți"],
+          ["III", "Bunicii și alți ascendenți", "Se aplică dacă nu există clasele I și II"],
+          ["IV", "Unchii, mătușile, verii primari și alte rude colaterale", "Ultima clasă"],
+        ],
+      },
+      after: [
+        "Soțul supraviețuitor moștenește împreună cu oricare dintre clase. Cota lui este, în principiu, un sfert când vine alături de descendenți, o treime alături de părinți și frați, și jumătate alături de clasele III sau IV.",
+        "Majoritatea disputelor dintre frați apar la moștenirea de la părinți, unde frații sunt moștenitori din clasa I.",
+      ],
+    },
+    {
+      id: "termene-care-nu-trebuie-ratate",
+      title: "Termene care nu trebuie ratate",
+      paragraphs: ["Cel mai important termen este cel de acceptare sau renunțare: șase luni de la decesul defunctului."],
+      items: [
+        "**Acceptarea sau renunțarea la moștenire:** 6 luni de la data deschiderii succesiunii, adică de la deces. Dacă nu te pronunți în acest termen, pierzi dreptul de a accepta.",
+        "**Acțiunea de partaj:** nu se prescrie atâta timp cât durează indiviziunea, așa că poți cere oricând ieșirea din coproprietate.",
+        "**Acțiunea în reducțiune** (pentru protejarea rezervei succesorale): are un termen scurt, de regulă de un an, așa că merită să consulți un avocat cât mai repede.",
+        "**Intabularea în cartea funciară:** după certificatul de moștenitor, nu uita să-ți înscrii dreptul de proprietate asupra imobilelor.",
+      ],
+      after: ["Termenele curg de la momente diferite și au excepții, de aceea e bine să verifici data exactă cu un avocat sau un notar."],
+    },
+    {
+      id: "testament-si-rezerva-succesorala",
+      title: "Testament și rezervă succesorală: ce nu se poate ocoli",
+      paragraphs: ["Testamentul permite defunctului să decidă cine primește ce, dar nu poate lăsa fără nimic copiii, părinții sau soțul, pentru că ei au dreptul la rezerva succesorală."],
+      items: [
+        "**Rezerva succesorală** este jumătate din ce ar fi primit moștenitorul dacă nu exista testament. Au rezervă descendenții, părinții și soțul supraviețuitor.",
+        "**Cota disponibilă** este partea din avere cu care defunctul poate face ce vrea: poate lăsa unui singur copil, unui prieten sau unei organizații. Dacă defunctul are doi copii și nu are soț, poate dispune liber de jumătate din avere.",
+        "**Frații și surorile defunctului nu au rezervă.** Dacă moștenesc din clasa II, pot fi dezmoșteniți prin testament.",
+        "**Testamentul poate fi contestat** dacă este făcut fără respectarea formei cerute de lege (olograf sau autentic), dacă defunctul nu avea discernământ sau dacă a fost influențat abuziv.",
+      ],
+      after: ["Când testamentul încalcă rezerva, moștenitorul rezervatar poate cere reducerea liberalităților excesive."],
+    },
+    {
+      id: "de-ce-se-cearta-fratii",
+      title: "De ce se ceartă frații la moștenire",
+      paragraphs: ["Disputele pornesc, de obicei, din câteva situații care se repetă."],
+      items: [
+        "**Un imobil care nu poate fi împărțit în natură.** Dacă toți vor casa părintească sau nimeni nu vrea să plătească, apare blocajul.",
+        "**Donațiile făcute în timpul vieții.** Un frate a primit un teren sau un apartament de la părinți. Copiii trebuie, în principiu, să raporteze donațiile primite, adică valoarea lor se ia în calcul la partaj, dacă defunctul nu a scutit de raport.",
+        "**Testamentul care favorizează un singur copil.** Poate fi valabil în limita cotei disponibile, dar poate fi atacat dacă încalcă rezerva.",
+        "**Îngrijirea părintelui.** Cine a stat cu părintele și l-a îngrijit consideră, firesc, că merită mai mult, însă legea nu prevede automat o cotă mai mare pentru asta.",
+        "**Un frate ocupă imobilul** și refuză să plătească ceva celorlalți.",
+        "**Datoriile defunctului,** care apar abia după acceptare.",
+      ],
+    },
+    {
+      id: "cum-se-imparte-mostenirea",
+      title: "Cum se împarte moștenirea, pas cu pas",
+      paragraphs: ["Procedura începe la notar, dar dacă frații nu se înțeleg, dosarul poate ajunge în instanță."],
+      ordered: true,
+      items: [
+        "**Acceptarea moștenirii** în 6 luni de la deces, fie expres, printr-o declarație la notar, fie tacit, prin acte de preluare a bunurilor.",
+        "**Dezbaterea succesiunii la notar.** Notarul de la ultimul domiciliu al defunctului strânge actele, verifică moștenitorii și eliberează certificatul de moștenitor.",
+        "**Partajul voluntar.** Dacă frații se înțeleg, împart bunurile prin convenție la notar. Cel care primește un bun mai valoros poate plăti celorlalți o sultă, adică o sumă de bani care egalizează cotele.",
+        "**Medierea.** Un mediator autorizat poate ajuta frații să ajungă la o înțelegere mai repede și mai ieftin decât în instanță.",
+        "**Acțiunea de partaj în instanță.** Dacă nu există acord, instanța împarte bunurile, de regulă după o expertiză de evaluare. Poate atribui bunul unui moștenitor cu sultă sau, când nu se poate altfel, poate dispune vânzarea lui și împărțirea banilor.",
+        "**Intabularea** în cartea funciară a dreptului de proprietate pe numele moștenitorilor.",
+      ],
+    },
+    {
+      id: "greseli-frecvente",
+      title: "Greșeli frecvente",
+      paragraphs: ["Multe dosare se complică pentru că lucrurile sunt amânate sau făcute informal."],
+      items: [
+        "**Lași să treacă cele 6 luni** fără să accepți sau să renunți.",
+        "**Semnezi un act la notar fără să-l citești** sau fără să știi ce bunuri intră în masa succesorală.",
+        "**Vinzi sau închiriezi un bun din moștenire** fără acordul celorlalți moștenitori.",
+        "**Ignori donațiile** făcute în timpul vieții defunctului și nu le ceri luate în calcul.",
+        "**Folosești bunuri ale moștenirii** fără să te asiguri de consecințe, de exemplu ocuparea imobilului singur.",
+        "**Accepți moștenirea fără să verifici datoriile** defunctului.",
+        "**Aștepți ani de zile** în indiviziune, iar relațiile dintre frați se degradează și probele se pierd.",
+      ],
+    },
+    {
+      id: "disputa-de-mostenire",
+      title: "Ai o dispută de moștenire în familie?",
+      paragraphs: ["Cu cât te informezi mai devreme, cu atât ai mai multe opțiuni și mai puține conflicte. Contactează-ne pentru o consultație confidențială și analizăm împreună situația ta, de la termene și acte până la strategia de partaj."],
+      note: "Acest articol are caracter informativ și nu reprezintă consultanță juridică. Fiecare moștenire are particularități, iar soluția potrivită se stabilește doar după analiza cazului concret.",
+      links: [
+        { label: "Asistență în drept civil, succesiuni și partaj", url: "/avocat-drept-civil-harlau" },
+        { label: "Programează o consultație", url: "/contact" },
+      ],
+    },
+  ],
+  faqs: [
+    { question: "Pot fi obligat să rămân în indiviziune cu frații?", answer: "Nu. Oricând poți cere ieșirea din indiviziune, adică partajul, iar acțiunea de partaj nu se prescrie atâta timp cât durează indiviziunea." },
+    { question: "Părintele a lăsat prin testament totul unui singur frate. E valabil?", answer: "În limita cotei disponibile, da. Copiii au însă dreptul la rezerva succesorală, pe care o pot cere dacă testamentul o încalcă." },
+    { question: "Pot renunța la moștenire?", answer: "Da, în termen de 6 luni de la deces, printr-o declarație la notar. Discută cu un avocat înainte, pentru că după renunțare este greu de revenit." },
+    { question: "Ce se întâmplă cu datoriile defunctului?", answer: "În principiu, se plătesc din bunurile moștenite. Verifică situația datoriilor înainte să accepți moștenirea." },
+    { question: "Mergem la notar sau în instanță?", answer: "La notar, dacă toți moștenitorii sunt de acord. În instanță, dacă nu vă înțelegeți asupra bunurilor sau a cotelor." },
+    { question: "Cât durează?", answer: "La notar, uneori câteva săptămâni, dacă toți sunt de acord. În instanță, luni sau chiar ani, în funcție de complexitatea dosarului." },
+    { question: "Am nevoie de avocat dacă mergem la notar?", answer: "Nu este obligatoriu, dar un avocat te ajută să înțelegi ce semnezi și să-ți protejezi drepturile." },
+  ],
+};

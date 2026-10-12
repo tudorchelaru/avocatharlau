@@ -1,0 +1,50 @@
+---
+import { AREAS } from "../data/site";
+import Icon from "./Icon.astro";
+interface Props {
+  featured?: boolean;
+}
+const { featured = false } = Astro.props;
+// Succession is covered by the civil-law page and uses its canonical route.
+const featuredAreas = [
+  { slug: "familie", title: "Dreptul familiei", short: "Divorțuri, custodie, pensie alimentară și alte aspecte privind relațiile de familie." },
+  { slug: "avocat-drept-civil-harlau", title: "Succesiuni și moșteniri", short: "Partaje, certificate de moștenitor, întabulări și litigii succesorale." },
+  { slug: "avocat-drept-civil-harlau", title: "Drept civil", short: "Contracte, litigii, răspundere civilă, proprietate, terenuri și alte drepturi reale." },
+  { slug: "avocat-drept-penal-harlau", title: "Drept penal", short: "Asistență și reprezentare în faza de urmărire penală și în instanță." },
+  { slug: "amenzi-contraventii", title: "Amenzi și contravenții", short: "Contestații, anularea proceselor-verbale și apărarea drepturilor tale." },
+  { slug: "societati-comerciale", title: "Drept comercial", short: "Înființare firme, contracte, litigii comerciale și consultanță pentru afaceri locale." },
+];
+const areas = featured ? featuredAreas : AREAS;
+const icons: Record<string, string> = {
+  familie: "family",
+  "avocat-drept-civil-harlau": "document",
+  "avocat-drept-penal-harlau": "gavel",
+  "executari-silite": "coins",
+  "amenzi-contraventii": "document",
+  "societati-comerciale": "building",
+  "drept-bancar-si-fiscal": "building",
+  "consultanta-negocieri-medieri": "chat",
+};
+const titles: Record<string, string> = {
+  "avocat-drept-civil-harlau": "Drept civil și succesiuni",
+  "amenzi-contraventii": "Amenzi și contravenții",
+  "societati-comerciale": "Drept comercial",
+};
+---
+
+<ul class="service-grid">
+  {areas.map((a, i) => (
+    <li data-reveal style={`--delay: ${(i % 3) * 80}ms`}>
+      <a class="service-card" href={`/${a.slug}`}>
+        <Icon name={featured && i === 2 ? "house" : icons[a.slug] || "scales"} class="service-card__icon" />
+        <div>
+          <h3>{featured ? a.title : titles[a.slug] || a.title}</h3>
+          <p>{a.short}</p>
+        </div>
+        <span class="circle-arrow">
+          <Icon />
+        </span>
+      </a>
+    </li>
+  ))}
+</ul>

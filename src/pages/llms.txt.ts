@@ -6,7 +6,7 @@ export const prerender = true;
 export const GET: APIRoute = () => {
   const body = `# ${SITE.name} – ${SITE.firm}
 
-> Casă de avocatură cu ${SITE.tagline.toLowerCase()}, pentru clienții din Hârlău și din comunele arondate Judecătoriei Hârlău (${LOCALITIES.join(", ")}), județul Iași.
+> ${SITE.tagline} pentru clienții din Hârlău și din localitățile învecinate (${LOCALITIES.join(", ")}), județul Iași.
 
 ## Avocați
 ${TEAM.map((p) => `- ${p.name}: ${p.phone}`).join("\n")}
@@ -21,8 +21,12 @@ ${TEAM.map((p) => `- ${p.name}: ${p.phone}`).join("\n")}
 ${AREAS.map((a) => `- [${a.title}](${SITE.url}/${a.slug}): ${a.short}`).join("\n")}
 
 ## Pagini
+- [Servicii](${SITE.url}/servicii)
+- [Articole](${SITE.url}/articole)
 - [Despre noi](${SITE.url}/despre-noi)
 - [Contact](${SITE.url}/contact)
 `;
-  return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
+  return new Response(body, {
+    headers: { "Content-Type": "text/plain; charset=utf-8" },
+  });
 };

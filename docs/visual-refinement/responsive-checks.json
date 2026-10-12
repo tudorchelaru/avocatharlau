@@ -1,0 +1,58 @@
+[
+  {
+    "documentWidth": 375,
+    "heroHeight": 867,
+    "localHeight": 521,
+    "serviceColumns": "327px",
+    "teamColumns": "303px",
+    "width": 375
+  },
+  {
+    "documentWidth": 390,
+    "heroHeight": 829,
+    "localHeight": 521,
+    "serviceColumns": "342px",
+    "teamColumns": "318px",
+    "width": 390
+  },
+  {
+    "documentWidth": 430,
+    "heroHeight": 833,
+    "localHeight": 485,
+    "serviceColumns": "382px",
+    "teamColumns": "358px",
+    "width": 430
+  },
+  {
+    "documentWidth": 768,
+    "heroHeight": 560,
+    "localHeight": 264,
+    "serviceColumns": "220.797px 220.805px",
+    "teamColumns": "209.328px 209.336px 209.328px",
+    "width": 768
+  },
+  {
+    "documentWidth": 1024,
+    "heroHeight": 451,
+    "localHeight": 170,
+    "serviceColumns": "180.945px 180.945px 180.945px",
+    "teamColumns": "198.523px 198.523px 198.531px",
+    "width": 1024
+  },
+  {
+    "documentWidth": 1440,
+    "heroHeight": 634,
+    "localHeight": 239,
+    "serviceColumns": "264.297px 264.297px 264.297px",
+    "teamColumns": "283.555px 283.555px 283.555px",
+    "width": 1440
+  },
+  {
+    "documentWidth": 1920,
+    "heroHeight": 690,
+    "localHeight": 260,
+    "serviceColumns": "288px 288px 288px",
+    "teamColumns": "308.664px 308.664px 308.664px",
+    "width": 1920
+  }
+]

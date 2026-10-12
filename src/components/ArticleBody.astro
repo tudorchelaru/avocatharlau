@@ -1,0 +1,40 @@
+---
+import type { ArticleBlock } from "../data/articles";
+interface Props {
+  block: ArticleBlock;
+}
+const { block } = Astro.props;
+const List = block.ordered ? "ol" : "ul";
+// `**text**` marks a bold lead-in; everything else stays plain text.
+const parts = (text: string) => text.split("**");
+---
+
+{block.paragraphs?.map((paragraph) => (
+  <p>{parts(paragraph).map((part, i) => (i % 2 ? <strong>{part}</strong> : part))}</p>
+))}
+{block.table && (
+  <div class="reading-table">
+    <table>
+      <thead>
+        <tr>{block.table.head.map((cell) => <th scope="col">{cell}</th>)}</tr>
+      </thead>
+      <tbody>
+        {block.table.rows.map((row) => (
+          <tr>
+            {row.map((cell, i) => (i === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
+{block.items?.length && (
+  <List>
+    {block.items.map((item) => (
+      <li>{parts(item).map((part, i) => (i % 2 ? <strong>{part}</strong> : part))}</li>
+    ))}
+  </List>
+)}
+{block.after?.map((paragraph) => (
+  <p>{parts(paragraph).map((part, i) => (i % 2 ? <strong>{part}</strong> : part))}</p>
+))}

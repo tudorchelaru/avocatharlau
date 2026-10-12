@@ -3,14 +3,15 @@ import areasContent from "./areas-content.json";
 export const SITE = {
   url: "https://avocatharlau.ro",
   name: "AvocatHârlău.ro",
-  firm: "Casa de avocatură Chelaru | Botezatu | Chiperi",
-  tagline: "Peste 22 de ani de experiență în servicii juridice",
+  firm: "Chelaru | Botezatu | Chiperi",
+  tagline: "Consultanță și reprezentare juridică",
   phone: "+40 744 484 136",
   phoneHref: "tel:+40744484136",
   whatsapp: "https://wa.me/40744484136",
   email: "contact@avocatharlau.ro",
   // No public address until the Hârlău office is found.
-  officeHarlau: "Sediul din Hârlău se deschide în curând. Întâlnirile au loc pe bază de programare.",
+  officeHarlau:
+    "Sediul din Hârlău se deschide în curând. Întâlnirile au loc pe bază de programare.",
   hours: "Luni – Vineri, 09:00 – 17:00",
   ogImage: "/images/og-avocat-harlau.jpg",
   logoPng: "/images/logo/avocat-harlau-chelaru-botezatu-chiperi-logo.png",
@@ -24,6 +25,8 @@ export type TeamMember = {
   phone: string;
   phoneHref: string;
   whatsapp: string;
+  portraitBase?: string;
+  portraitPosition?: string;
   excludeAreas?: string[];
 };
 
@@ -31,15 +34,19 @@ export const TEAM: TeamMember[] = [
   {
     slug: "avocat-andreea-chelaru",
     name: "Andreea Chelaru",
+    portraitBase: "/images/echipa/avocat-andreea-chelaru-site-personal",
+    portraitPosition: "center top",
     phone: "0744 484 136",
     phoneHref: "tel:+40744484136",
     whatsapp: "https://wa.me/40744484136",
     // Practice areas (slugs) this lawyer does not handle; hidden from those pages' contact box.
-    excludeAreas: ["penal", "imigrari"],
+    excludeAreas: ["avocat-drept-penal-harlau", "imigrari"],
   },
   {
     slug: "avocat-razvan-botezatu",
     name: "Răzvan Botezatu",
+    portraitBase: "/images/echipa/avocat-razvan-botezatu-verde-unitar-closeup-v2",
+    portraitPosition: "center top",
     phone: "0745 272 507",
     phoneHref: "tel:+40745272507",
     whatsapp: "https://wa.me/40745272507",
@@ -47,26 +54,12 @@ export const TEAM: TeamMember[] = [
   {
     slug: "avocat-roxana-chiperi",
     name: "Roxana Chiperi",
+    portraitBase: "/images/echipa/avocat-roxana-chiperi-birou-ivory-closeup-v3",
+    portraitPosition: "center top",
     phone: "0740 160 507",
     phoneHref: "tel:+40740160507",
     whatsapp: "https://wa.me/40740160507",
     excludeAreas: ["imigrari"],
-  },
-];
-
-export const STATS = [
-  { value: "450+", label: "Clienți mulțumiți" },
-  { value: "99%", label: "Procese câștigate" },
-  { value: "750K", label: "Creanțe recuperate" },
-  { value: "22+", label: "Ani de experiență" },
-];
-
-export const WHY_US = [
-  { title: "Servicii juridice", text: "Transformăm cunoștințele noastre juridice în valoare pentru clienți." },
-  { title: "Rezultate excelente", text: "Echipa noastră este puternică, dinamică, profesionistă și loială." },
-  {
-    title: "Oameni pasionați",
-    text: "Te poți baza pe membrii echipei, nu dezamăgesc niciodată și întotdeauna găsesc soluția potrivită.",
   },
 ];
 
@@ -75,7 +68,7 @@ export const LOCALITIES = [
   "Cotnari",
   "Scobinți",
   "Belcești",
-  "Sipote",
+  "Șipote",
   "Plugari",
   "Deleni",
   "Erbiceni",
@@ -83,8 +76,7 @@ export const LOCALITIES = [
 ];
 
 export type Block =
-  | { type: "h2" | "h3" | "p"; text: string }
-  | { type: "ul"; items: string[] };
+  { type: "h2" | "h3" | "p"; text: string } | { type: "ul"; items: string[] };
 
 export type Area = {
   slug: string;
@@ -115,14 +107,14 @@ const AREA_META: AreaMeta[] = [
       "Avocați imigrări Hârlău. Asistență juridică pentru permise de muncă, vize, rezidență și cetățenie în România.",
   },
   {
-    slug: "civil",
+    slug: "avocat-drept-civil-harlau",
     short: "Cel mai larg domeniu juridic: proprietate, obligații, succesiuni.",
     seoTitle: "Avocat drept civil Hârlău",
     seoDescription:
       "Avocați drept civil Hârlău. Consultanță și reprezentare în probleme de proprietate, contracte, obligații și succesiuni.",
   },
   {
-    slug: "penal",
+    slug: "avocat-drept-penal-harlau",
     short: "Apărare în cauze penale, asistență în cursul urmăririi penale.",
     seoTitle: "Avocat drept penal Hârlău",
     seoDescription:
@@ -158,7 +150,8 @@ const AREA_META: AreaMeta[] = [
   },
   {
     slug: "accidente-auto-daune",
-    short: "Despăgubiri pentru accidente rutiere și daune materiale sau morale.",
+    short:
+      "Despăgubiri pentru accidente rutiere și daune materiale sau morale.",
     seoTitle: "Avocat accidente auto și despăgubiri Hârlău",
     seoDescription:
       "Avocați accidente auto Hârlău. Obținerea despăgubirilor pentru accidente rutiere, daune materiale și morale de la asigurător.",
@@ -172,14 +165,16 @@ const AREA_META: AreaMeta[] = [
   },
   {
     slug: "consultanta-negocieri-medieri",
-    short: "Consultanță juridică, negociere și mediere pentru soluționarea disputelor.",
+    short:
+      "Consultanță juridică, negociere și mediere pentru soluționarea disputelor.",
     seoTitle: "Consultanță juridică și mediere Hârlău",
     seoDescription:
       "Consultanță juridică, negocieri și mediere în Hârlău. Soluționarea amiabilă a disputelor cu asistența avocaților experimentați.",
   },
   {
     slug: "societati-comerciale",
-    short: "Înființare firme, modificări acte constitutive, fuziuni și litigii.",
+    short:
+      "Înființare firme, modificări acte constitutive, fuziuni și litigii.",
     seoTitle: "Avocat societăți comerciale Hârlău",
     seoDescription:
       "Avocați societăți comerciale Hârlău. Înființare firme, modificări acte constitutive, fuziuni, divizări și litigii comerciale.",
@@ -193,11 +188,22 @@ const AREA_META: AreaMeta[] = [
   },
 ];
 
-const content = areasContent as Record<string, { title: string; blocks: Block[]; faq: { q: string; a: string }[] }>;
+const content = areasContent as Record<
+  string,
+  { title: string; blocks: Block[]; faq: { q: string; a: string }[] }
+>;
 
-export const AREAS: Area[] = AREA_META.map((m) => ({ ...m, ...content[m.slug] }));
+export const AREAS: Area[] = AREA_META.map((m) => ({
+  ...m,
+  ...content[m.slug],
+}));
 
 // Footer shows the same six areas as the original site.
-export const FOOTER_AREAS = ["familie", "imigrari", "civil", "penal", "drept-bancar-si-fiscal", "accidente-auto-daune"].map(
-  (slug) => AREAS.find((a) => a.slug === slug)!,
-);
+export const FOOTER_AREAS = [
+  "familie",
+  "imigrari",
+  "avocat-drept-civil-harlau",
+  "avocat-drept-penal-harlau",
+  "drept-bancar-si-fiscal",
+  "accidente-auto-daune",
+].map((slug) => AREAS.find((a) => a.slug === slug)!);

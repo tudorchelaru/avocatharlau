@@ -1,0 +1,444 @@
+/* Article reading structure, adapted to the site's Fraunces / Manrope identity. */
+.reading-surface {
+  padding-block: 38px 70px;
+}
+.reading-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 32px;
+}
+.reading-meta > span:first-child {
+  color: var(--burgundy);
+}
+.reading-draft,
+.article-card__meta .article-draft {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.reading-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.reading-main {
+  min-width: 0;
+}
+.reading-section {
+  position: relative;
+  padding: 32px 0 32px 48px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 110px;
+}
+.reading-number {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  font-size: 12px;
+  color: var(--burgundy);
+  letter-spacing: 0.08em;
+}
+.reading-section h2,
+.reading-faq h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 2.6vw, 38px);
+  line-height: 1.16;
+  margin-bottom: 22px;
+}
+.reading-section p,
+.reading-section li,
+.reading-faq p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #48464a;
+}
+.reading-section ul,
+.reading-section ol {
+  padding-left: 24px;
+}
+.reading-section ol li::marker {
+  color: var(--burgundy);
+  font-weight: 600;
+}
+.reading-section strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.reading-section ul + p,
+.reading-section ol + p,
+.reading-table + p {
+  margin-top: 18px;
+}
+.reading-table {
+  margin-block: 8px 24px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.reading-table table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.reading-table th,
+.reading-table td {
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+  color: #48464a;
+}
+.reading-table thead th {
+  background: #eee5e2;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+.reading-table tbody th {
+  color: var(--burgundy);
+  font-weight: 600;
+}
+.reading-table tbody tr + tr > * {
+  border-top: 1px solid var(--line);
+}
+.reading-section li + li {
+  margin-top: 10px;
+}
+.reading-subsection {
+  margin-top: 28px;
+}
+.reading-subsection h3 {
+  font-family: var(--font-heading);
+  font-size: 25px;
+  margin-bottom: 14px;
+}
+.reading-note {
+  background: #eee5e2;
+  border-left: 3px solid var(--burgundy);
+  padding: 20px 24px;
+  margin-top: 24px;
+}
+/* Flex (not grid) so the sticky block keeps its own height and can follow the reader. */
+.reading-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: stretch;
+}
+.reading-sticky {
+  display: grid;
+  gap: 24px;
+  position: sticky;
+  top: 110px;
+}
+.reading-panel {
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.reading-panel h2 {
+  font-family: var(--font-heading);
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.reading-toc ol {
+  padding-left: 20px;
+  margin: 0;
+}
+.reading-toc li {
+  padding-left: 6px;
+  color: var(--burgundy);
+}
+.reading-toc li + li {
+  margin-top: 14px;
+}
+.reading-toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.reading-toc a:hover {
+  color: var(--burgundy);
+}
+.reading-help {
+  padding: 0;
+  overflow: hidden;
+}
+.reading-help-copy {
+  padding: 24px 22px 20px;
+  text-align: center;
+  background: radial-gradient(ellipse at top, #eee5e2, transparent 70%);
+}
+.reading-help-copy > svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 10px;
+  color: var(--burgundy);
+}
+.reading-panel.reading-help h2 {
+  font-size: 25px;
+  margin-bottom: 0;
+}
+.reading-help-copy p {
+  max-width: 270px;
+  margin: 10px auto 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.reading-help-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 21px;
+  color: var(--text);
+  text-decoration: none;
+}
+.reading-help-phone:hover {
+  color: var(--burgundy);
+}
+.reading-help-phone svg {
+  width: 18px;
+  height: 18px;
+  color: var(--burgundy);
+}
+.reading-help .btn {
+  width: 100%;
+  min-height: 0;
+  margin-top: 16px;
+  padding: 12px 10px;
+  font-size: 12px;
+}
+.reading-trust {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  margin: 0;
+  padding: 12px 8px;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.reading-trust li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 9px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+.reading-trust li + li {
+  border-left: 1px solid var(--line);
+}
+.reading-trust svg {
+  width: 17px;
+  height: 20px;
+  flex: none;
+  color: var(--burgundy);
+}
+.reading-similar > a {
+  display: block;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+.reading-similar > a + a {
+  margin-top: 18px;
+}
+.reading-similar span {
+  color: var(--burgundy);
+  font-size: 11px;
+}
+.reading-similar h3 {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  line-height: 1.25;
+  margin: 8px 0 0;
+}
+.reading-tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 10px;
+}
+.reading-tags li {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: var(--radius);
+}
+.reading-faq {
+  margin-top: 32px;
+}
+.reading-faq details {
+  padding-block: 18px;
+  border-bottom: 1px solid var(--line);
+}
+.reading-faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.reading-faq p {
+  margin: 16px 0 0;
+}
+.reading-author {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-block: 32px;
+  margin-top: 32px;
+  border-block: 1px solid var(--line);
+}
+.reading-author-portrait {
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.reading-author-portrait picture,
+.reading-author-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reading-author .eyebrow {
+  margin-bottom: 8px;
+}
+.reading-author h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 38px);
+  margin: 0 0 10px;
+}
+.reading-author span {
+  display: block;
+  color: var(--burgundy);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.reading-author .text-link {
+  margin-top: 12px;
+  font-size: 13px;
+}
+.reading-back {
+  margin-top: 32px;
+}
+@media (max-width: 1020px) {
+  .reading-layout {
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 32px;
+  }
+  .reading-panel {
+    padding: 20px;
+  }
+  .reading-panel.reading-help {
+    padding: 0;
+  }
+}
+@media (max-width: 767px) {
+  .reading-surface {
+    padding-block: 24px 42px;
+  }
+  .reading-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .reading-main,
+  .reading-sidebar {
+    width: 100%;
+  }
+  .reading-toc {
+    order: -1;
+  }
+  .reading-sidebar {
+    display: contents;
+  }
+  .reading-sticky {
+    position: static;
+    width: 100%;
+  }
+  .reading-help-copy p {
+    max-width: 350px;
+  }
+  .reading-help .btn {
+    width: auto;
+    padding-inline: 24px;
+  }
+  .reading-trust li {
+    font-size: 11px;
+    padding-block: 6px;
+    gap: 8px;
+  }
+  .reading-meta {
+    font-size: 12px;
+    margin-bottom: 24px;
+    gap: 8px 16px;
+  }
+  .reading-section {
+    padding: 26px 0 26px 30px;
+  }
+  .reading-number {
+    top: 32px;
+    font-size: 10px;
+  }
+  .reading-section p,
+  .reading-section li,
+  .reading-faq p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .reading-author {
+    gap: 16px;
+  }
+  .reading-author-portrait {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.reading-section .reading-sources {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 22px;
+  color: var(--muted);
+}
+.reading-sources a {
+  color: var(--burgundy);
+  text-underline-offset: 3px;
+}
+.reading-section-link {
+  display: flex;
+  width: fit-content;
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+/* Author row reuses the portrait and person details from the service contact card. */
+.reading-help-person {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: left;
+}
+.reading-help-person .reading-help-phone {
+  justify-content: flex-start;
+  margin-top: 6px;
+  font-size: 18px;
+}

@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "start": "node ./dist/server/entry.mjs",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check"
   },
   "engines": {
     "node": ">=20"
@@ -17,5 +18,10 @@
     "@astrojs/node": "^9.5.5",
     "astro": "^5.16.3",
     "nodemailer": "^7.0.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.6.5",
+    "@types/nodemailer": "^8.0.2"
   }
 }

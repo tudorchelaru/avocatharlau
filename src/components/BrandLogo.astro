@@ -1,0 +1,28 @@
+---
+import monogram from "../data/brand.json";
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+const subtitle = "CHELARU | BOTEZATU | CHIPERI";
+---
+
+<span class:list={["brand-logo", { "brand-logo--dark": dark }]}>
+  <svg
+    class="brand-logo__symbol"
+    viewBox={monogram.viewBox}
+    fill="none"
+    aria-hidden="true"
+  >
+    <path class="brand-logo__a" d={monogram.a} stroke="currentColor" stroke-width={monogram.aStroke} />
+    <path class="brand-logo__h" d={monogram.h} stroke="currentColor" stroke-width={monogram.hStroke} />
+  </svg>
+  <span class="brand-logo__type">
+    <span class="brand-logo__wordmark site-logo">AvocatHârlău.ro</span>
+    <span class="brand-logo__subtitle">
+      {Array.from(subtitle).map((letter) => (
+        <span>{letter === " " ? "\u00a0" : letter}</span>
+      ))}
+    </span>
+  </span>
+</span>

@@ -1,0 +1,14 @@
+# Hero — lumină, echilibru și sprijin
+
+Generat cu instrumentul integrat image_gen la cererea utilizatorului. Concept: balanță în echilibru, lumină caldă de dimineață și atmosferă apropiată de oameni. Fără chipuri sau persoane. Mesajul HTML principal: „Nu trebuie să treci singur prin asta.”
+
+Original: `public/images/hero/hero-lumina-echilibru.png`, 1672×941. Variante AVIF/WebP la 768, 1200 și 1672 px. Header-ul rămâne transparent peste hero la început și primește fundal la scroll. Fotografiile originale ale avocaților rămân în secțiunea echipei.
+
+## Prompt final
+
+Use case: ads-marketing / photorealistic-natural.
+Asset type: evocative full-width hero photograph for a Romanian legal-services website, with real HTML dark text on the left and a transparent navigation along the top.
+Create a warm, emotional editorial still life about justice as clarity, care and hope. A slender, beautifully crafted antique brushed-brass balance of justice stands on the RIGHT half of a warm oak desk, its two shallow pans level and in balance. A simple closed burgundy leather legal folio rests nearby, without visible writing. A few understated linen textures. Morning sunlight comes through a tall window outside the frame, creating soft luminous beams, gentle glowing brass edges and reassuring shadows. The BACKGROUND is a softly blurred, welcoming cream interior, not a grand courthouse or luxury marble hall. A subtle arch-shaped patch of sunlight in the background suggests shelter and an open way forward. The feeling is intimate, hopeful and human: someone is here to listen, order can emerge from uncertainty. A premium real-world editorial photograph with authentic material texture, subtle film grain, natural lens depth and warm soft daylight.
+COMPOSITION: panoramic 16:9. The meaningful legal object is clearly legible and visually compelling on the right, large enough to be recognized on a website, not a tiny symbol. Its top starts BELOW the top 18 percent, leaving the entire upper strip quiet and light cream for a navy logo and dark menu. The LEFT 55 percent is luminous, quiet cream negative space with subtle atmosphere and very little detail, suitable for a large dark headline and two buttons. Avoid objects or busy strong shadows on the left. On the right, balance the folio and golden scales with softly illuminated air, not a pile of legal clichés.
+Color palette: ivory, warm honey light, muted oak, brushed antique gold, one small burgundy accent. Beautiful expressive light, soft contrast, restrained cinematic art direction.
+No people, faces, human hands, silhouettes, Lady Justice statue, blindfolds, gavels, pillars, monumental courthouse, abstract marble spirals, loud red, dark corporate mood, lettering, inscriptions, logos, watermarks, captions, website UI or buttons. Make it welcoming and emotionally engaging, grounded in the legal domain through the actual balanced scales.

@@ -1,28 +1,37 @@
 ---
 import { SITE } from "../data/site";
-
+import Icon from "./Icon.astro";
 interface Props {
   title?: string;
   text?: string;
   phone?: { display: string; href: string };
 }
-
 const {
-  title = "Aveți nevoie de asistență juridică?",
-  text = "Contactați-ne pentru o consultație inițială. Suntem aici să vă ajutăm.",
+  title = "Ai nevoie de îndrumare juridică?",
+  text = "Discută cu noi. Suntem aici pentru tine.",
   phone = { display: SITE.phone, href: SITE.phoneHref },
 } = Astro.props;
 ---
 
 <section class="cta-band">
-  <div class="wrap cta-band__inner">
+  <Icon name="scales" class="cta-band__decoration" />
+  <div class="wrap cta-band__inner" data-reveal>
     <div>
+      <p class="eyebrow">Contact</p>
       <h2>{title}</h2>
       <p>{text}</p>
     </div>
-    <div class="hero__actions">
-      <a href="/contact" class="btn btn--gold">Contactează-ne</a>
-      <a href={phone.href} class="btn btn--ghost">{phone.display}</a>
+    <div class="cta-band__actions">
+      <a href="/contact" class="btn btn--light">
+        Discută cu un avocat <Icon />
+      </a>
+      <div class="cta-band__phone">
+        <a href={phone.href}>
+          <Icon name="phone" />
+          {phone.display}
+        </a>
+        <span>{SITE.hours}</span>
+      </div>
     </div>
   </div>
 </section>

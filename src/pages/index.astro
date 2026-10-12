@@ -1,111 +1,133 @@
 ---
 import Base from "../layouts/Base.astro";
 import CtaBand from "../components/CtaBand.astro";
-import { SITE, AREAS, LOCALITIES, STATS } from "../data/site";
-
+import ServiceGrid from "../components/ServiceGrid.astro";
+import Icon from "../components/Icon.astro";
+import CommunitySection from "../components/CommunitySection.astro";
+import { SITE, TEAM } from "../data/site";
+import Portrait from "../components/Portrait.astro";
 export const prerender = true;
-
-const website = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${SITE.url}/#website`,
-  name: SITE.name,
-  url: `${SITE.url}/`,
-  inLanguage: "ro-RO",
-  publisher: { "@id": `${SITE.url}/#cabinet` },
-};
 ---
 
 <Base
-  title="Avocat Hârlău – Chelaru, Botezatu, Chiperi | AvocatHârlău.ro"
-  description="Casa de avocatură Chelaru | Botezatu | Chiperi – peste 22 de ani de experiență. Dreptul familiei, drept civil, penal, imigrări, executări silite pentru clienții din Hârlău."
+  title="Avocați în Hârlău – Chelaru, Botezatu, Chiperi"
+  description="Consultanță și reprezentare juridică pentru oamenii din Hârlău, Cotnari și împrejurimi. Dreptul familiei, civil, penal și alte servicii juridice."
   path="/"
-  jsonLd={[website]}
 >
-  <section class="hero hero--text">
-    <div class="wrap">
-      <p class="eyebrow">Chelaru · Botezatu · Chiperi</p>
-      <h1>
-        Casa de avocatură<br />
-        <em>pentru Hârlău și împrejurimi</em>
-      </h1>
-      <p class="hero__lede">{SITE.tagline}</p>
-      <div class="hero__actions">
-        <a href="/contact" class="btn btn--gold">Programează o consultație</a>
-        <a href="/despre-noi" class="btn btn--ghost">Despre noi</a>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow hero-enter" style="--delay: 40ms">Soluții juridice reale</p>
+        <h1 id="hero-title" class="hero-title hero-enter" style="--delay: 120ms">
+          Ai nevoie de un avocat<br class="hero__break" /> în Hârlău?
+          <em>Suntem aici pentru tine.</em>
+        </h1>
+        <div class="hero__media">
+          <picture class="hero__visual" aria-hidden="true">
+            <source type="image/avif" srcset="/images/hero/hero-biserica-balanta-v2-480w.avif 480w, /images/hero/hero-biserica-balanta-v2-768w.avif 768w, /images/hero/hero-biserica-balanta-v2-1122w.avif 1122w" sizes="(max-width: 767px) 69vw, 40vw" />
+            <img src="/images/hero/hero-biserica-balanta-v2-1122w.webp" srcset="/images/hero/hero-biserica-balanta-v2-480w.webp 480w, /images/hero/hero-biserica-balanta-v2-768w.webp 768w, /images/hero/hero-biserica-balanta-v2-1122w.webp 1122w" sizes="(max-width: 767px) 69vw, 40vw" width="1122" height="1402" alt="" loading="eager" fetchpriority="high" decoding="async" />
+          </picture>
+          <aside class="hero__panel" aria-label="Abordarea noastră și comunitățile deservite">
+            <div class="hero__values"><span>Claritate</span><span>Empatie</span><span>Experiență</span><span>Soluții reale</span></div>
+            <a class="hero__panel-arrow circle-arrow" href="#servicii" aria-label="Descoperă serviciile juridice"><Icon /></a>
+            <p class="hero__localities">Hârlău<br />Cotnari<br />Deleni<br />Scobinți<br />Belcești<br />și împrejurimi</p>
+          </aside>
+        </div>
+        <p class="hero__lede hero-description hero-enter" style="--delay: 200ms">
+          Trei avocați cu experiență alături de tine în Hârlău, Cotnari
+          și împrejurimi. Îți explicăm clar opțiunile și te ajutăm să găsești
+          cea mai bună soluție pentru situația ta.
+        </p>
+        <div class="hero__actions hero-enter" style="--delay: 280ms">
+          <a href="/contact" class="btn btn--gold">Programează o consultație <Icon /></a>
+          <a href={SITE.phoneHref} class="btn btn--outline"><Icon name="phone" /> Sună acum</a>
+        </div>
+        <ul class="trust hero-enter" style="--delay: 360ms">
+          <li><Icon name="chat" /> Discuție confidențială</li>
+          <li><Icon name="document" /> Explicații pe înțelesul tău</li>
+          <li><Icon name="people" /> Abordare personală</li>
+        </ul>
       </div>
-      <dl class="stats">
-        {
-          STATS.map((s) => (
-            <div>
-              <dt>{s.value}</dt>
-              <dd>{s.label}</dd>
-            </div>
-          ))
-        }
-      </dl>
     </div>
   </section>
-
-  <section class="section">
-    <div class="wrap">
-      <header class="section__head">
-        <p class="eyebrow eyebrow--dark">Ce facem</p>
-        <h2>Domenii de activitate</h2>
+  <section class="local-intro" aria-labelledby="local-title">
+    <picture class="local-intro__image" aria-hidden="true">
+      <source srcset="/images/comunitate/justitie-arhitectura-v2.avif" type="image/avif" />
+      <img src="/images/comunitate/justitie-arhitectura-v2.webp" width="1200" height="800" alt="" loading="lazy" decoding="async" />
+    </picture>
+    <div class="local-intro__heading" data-reveal>
+      <p class="eyebrow">De ce să alegi un avocat din zona ta</p>
+      <h2 id="local-title">Cunoaștem oamenii<br /> și realitățile din comunitate.</h2>
+    </div>
+    <div class="local-intro__copy" data-reveal>
+      <p>Înțelegem specificul zonei Hârlău, Cotnari și împrejurimi și oferim soluții adaptate fiecărei situații. Suntem aproape de clienții noștri, cu o comunicare directă și transparentă.</p>
+      <a class="text-link" href="/despre-noi">Află mai multe despre noi <Icon /></a>
+    </div>
+  </section>
+  <section class="section services-section" id="servicii">
+    <div class="wrap home-services">
+      <header class="home-section-copy" data-reveal>
+        <p class="eyebrow">Domeniile noastre de expertiză</p>
+        <h2>Servicii juridice<br /> pentru tine<br /> și familia ta.</h2>
+        <p>De la probleme de familie și succesiuni, până la litigii civile, penale sau contravenții, îți oferim consultanță și reprezentare în toate etapele procesului.</p>
+        <a class="text-link" href="/servicii">Vezi toate serviciile <Icon /></a>
       </header>
-      <ul class="cards cards--areas">
-        {
-          AREAS.map((a) => (
-            <li class="card card--link">
-              <h3>
-                <a href={`/${a.slug}`}>{a.title}</a>
-              </h3>
-              <p>{a.short}</p>
-              <span class="card__more" aria-hidden="true">Află mai multe →</span>
-            </li>
-          ))
-        }
+      <ServiceGrid featured />
+    </div>
+  </section>
+  <section class="team-section home-team" id="echipa" aria-labelledby="team-title">
+    <div class="home-team__inner">
+      <header class="home-section-copy" data-reveal>
+        <p class="eyebrow">Echipa noastră</p>
+        <h2 id="team-title">Trei perspective.<br />O singură misiune:<br />soluții pentru tine.</h2>
+        <p>Fiecare dintre noi aduce experiență și o abordare complementară, pentru ca tu să beneficiezi de cea mai bună soluție, indiferent de situație.</p>
+        <a class="text-link" href="/despre-noi">Cunoaște echipa <Icon /></a>
+      </header>
+      <ul class="home-team__portraits">
+        {TEAM.map((person, i) => (
+          <li class="home-team__person" data-reveal style={`--delay: ${i * 90}ms`}>
+            <a class="home-team__photo" href={`/despre-noi#${person.slug}`} aria-label={`Cunoaște avocatul ${person.name}`}>
+              <Portrait person={person} sizes="(max-width: 599px) 90vw, (max-width: 900px) 40vw, 25vw" />
+            </a>
+            <div class="home-team__caption">
+              <div><h3>{person.name}</h3><p>Avocat</p></div>
+              <a class="circle-arrow" href={`/despre-noi#${person.slug}`} aria-label={`Află mai multe despre ${person.name}`}><Icon /></a>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   </section>
-
-  <section class="section section--paper">
-    <div class="wrap about">
-      <div class="about__quote">
-        <span class="about__mark" aria-hidden="true">“</span>
-        <blockquote>
-          Abordăm fiecare caz cu profesionalism, dedicare și atenție la detalii, punând interesele clienților noștri pe
-          primul loc.
-        </blockquote>
-        <p class="about__sign">Chelaru · Botezatu · Chiperi</p>
-      </div>
-      <div class="about__text">
-        <p class="eyebrow eyebrow--dark">Despre noi</p>
-        <h2>De ce să ne alegeți?</h2>
-        <p>
-          Cu o experiență de peste 22 de ani în domeniul juridic, cabinetul nostru de avocatură oferă servicii complete
-          de consultanță și reprezentare. Abordăm fiecare caz cu profesionalism, dedicare și atenție la detalii, punând
-          interesele clienților noștri pe primul loc.
-        </p>
-        <a href="/despre-noi" class="link-arrow">Află mai multe despre noi</a>
-      </div>
+  <CommunitySection />
+  <section class="section process">
+    <div class="wrap">
+      <header class="section__head" data-reveal>
+        <p class="eyebrow">Cum lucrăm</p>
+        <h2>Primul pas începe cu o discuție.</h2>
+      </header>
+      <ol class="steps">
+        {[
+          {
+            title: "Ne contactezi",
+            text: "Ne suni sau ne scrii și ne spui pe scurt cu ce te putem ajuta.",
+          },
+          {
+            title: "Discutăm situația",
+            text: "La consultație, analizăm împreună întrebările și documentele relevante.",
+          },
+          {
+            title: "Stabilim pașii următori",
+            text: "Clarificăm opțiunile și discutăm despre asistența juridică potrivită situației tale.",
+          },
+        ].map((s, i) => (
+          <li class="step" data-reveal style={`--delay: ${i * 90}ms`}>
+            <span class="step__num">0{i + 1}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
-
-  <section class="section section--dark">
-    <div class="wrap zone">
-      <div>
-        <p class="eyebrow">Zona deservită</p>
-        <h2>Hârlău și comunele arondate Judecătoriei Hârlău</h2>
-        <p>
-          Consultanță online sau față în față, pe bază de programare. Sediul din Hârlău se deschide în curând.
-        </p>
-      </div>
-      <ul class="chips" aria-label="Localități deservite">
-        {LOCALITIES.map((l) => <li>{l}</li>)}
-      </ul>
-    </div>
-  </section>
-
   <CtaBand />
 </Base>

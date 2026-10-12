@@ -1,0 +1,14 @@
+# Hero — biserică prin fereastră și balanță
+
+Imagine decorativă generată cu instrumentul integrat ImageGen, după referința utilizatorului. Scena este simbolică și nu identifică un sediu real sau un monument anume. Fotografiile celor trei avocați rămân nemodificate.
+
+Asset: `public/images/hero/hero-biserica-balanta-v2-original.png`, 1122 × 1402 px, cu variante responsive AVIF/WebP la 480, 768 și 1122 px. Pe mobil, fotografia ocupă 69% și panoul 31%, astfel încât ambele talere ale balanței rămân vizibile. Homepage: `src/pages/index.astro`. Încadrarea este controlată prin `src/styles/home.css`; structura, panoul burgundy, logo-ul și conținutul rămân păstrate.
+
+## Prompt final
+
+Use case: photorealistic-natural. Asset type: portrait hero photograph for an existing Romanian legal website. Input image is a STYLE AND COMPOSITION REFERENCE ONLY: it shows a homepage mockup. Reconstruct ONLY the atmospheric office photograph from the middle of the reference, as a clean standalone photographic asset. Do not generate or include ANY website layout, UI, white diagonal mask, burgundy panel, logo, caption or website text. Output portrait approximately 4:5, preferably 1024x1280. Scene: warm elegant legal office desk next to a tall black-framed window. Beyond the window, at upper-left/center, a clearly recognizable small Romanian-style historic stone church with a pointed narrow bell tower, slate roof, trees and distant rolling hills in soft golden afternoon light. The church must be prominent and visible, not an indistinct tiny building. In the foreground, at center-right, a traditional slender brass balance scale with two hanging pans, resting on a thick dark brown leather law book; the book spine reads exactly LEGE in discreet gold letters. A fountain pen, papers and another closed book on the lower desk, plant leaves along the left edge and upper-right edge. Composition matching the reference: church tower around x35% y33%, window central mullion around x53%, balance scale centered x70%, its finial at y43%, its base at y78%, book at y83%, papers below. Show the entire balance scale including BOTH pans, with natural physical anatomy and fine chains. Leave clear space between the visible church and the scale. No people. Ivory limestone, dark window frame, muted green trees, warm brass and brown books. Photographic realism, beautiful subdued sunlight, convincing material detail, slight background depth-of-field while church remains recognizable. This is a symbolic decorative scene, not a claim to depict a real law office or a specific identified church. No watermarks. Match the office atmosphere of the reference closely.
+
+
+## Verificare
+
+Încadrarea a fost inspectată în browser la 1440 px și 390 px, fără overflow. Metadatele homepage-ului sunt identice cu cele de dinaintea schimbării imaginii. Build Astro reușit.

@@ -1,0 +1,48 @@
+/* Keep the attribution with the legal line, as in the reference footer. */
+.footer__bottom { flex-wrap: wrap; }
+.footer__bottom .footer__credit { padding: 0; flex-shrink: 0; }
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 24px;
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  .footer .wrap { padding-inline: 24px; }
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 18px;
+  }
+  .footer__grid > * { min-width: 0; }
+  .footer__brand, .footer__contact { grid-column: 1 / -1; }
+  .footer .brand--footer { padding: 0; min-height: 36px; margin-bottom: 8px; }
+  .footer .brand-logo { height: 34px; gap: 10px; }
+  .footer .brand-logo__symbol { width: 37px; height: 30px; }
+  .footer .brand-logo__wordmark { font-size: 24px; }
+  .footer .brand-logo__subtitle { font-size: 6.5px; }
+  .footer .brand-logo__type { gap: 4px; }
+  .footer__brand p { margin: 0 0 6px; max-width: 330px; }
+  .footer a { min-height: 24px; padding-block: 3px; }
+  .footer__social { gap: 18px; }
+  .footer__title { font-size: 10px; letter-spacing: .08em; margin-bottom: 8px; }
+  .footer__people { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .footer__people li { margin: 0; }
+  .footer__name { font-size: 11px; line-height: 1.4; }
+  .footer__people a { min-height: 28px; white-space: nowrap; font-size: 11.5px; padding-block: 4px; }
+  .footer__line { margin: 4px 0 0; }
+  .footer__grid > nav ul { display: block; }
+  .footer__grid > nav a { display: block; padding-block: 3px; }
+  .footer__bottom {
+    margin-top: 18px;
+    padding-block: 12px 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 10px;
+  }
+  .footer__legal { display: grid; grid-template-columns: 1.5fr 1.2fr .7fr; gap: 10px; width: 100%; }
+  .footer__legal a { min-height: 28px; line-height: 1.4; }
+  .footer__bottom .footer__credit { gap: 8px; font-size: 10px; }
+  .footer__credit img { width: 90px; }
+}

@@ -1,0 +1,54 @@
+---
+import { TEAM } from "../data/site";
+import Portrait from "./Portrait.astro";
+import Icon from "./Icon.astro";
+interface Props {
+  detailed?: boolean;
+}
+const { detailed = false } = Astro.props;
+---
+
+<ul class:list={["team", { "team--detailed": detailed }]}>
+  {TEAM.map((p, i) => (
+    <li
+      class="team__card"
+      id={detailed ? p.slug : undefined}
+      data-reveal
+      style={`--delay: ${i * 90}ms`}
+    >
+      <Portrait person={p} />
+      <div class="team__body">
+        <h3>{p.name}</h3>
+        <p class="team__role">Avocat</p>
+        <p class="team__intro">
+          {detailed
+            ? "Programările pentru consultații se stabilesc telefonic sau prin formularul de contact."
+            : "Consultanță și reprezentare juridică. Discută direct cu avocatul despre situația ta."}
+        </p>
+        {detailed ? (
+          <>
+            <a class="team__phone" href={p.phoneHref}>
+              {p.phone}
+            </a>
+            <a
+              class="text-link"
+              href={p.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Scrie pe WhatsApp <Icon />
+            </a>
+          </>
+        ) : (
+          <a
+            class="text-link"
+            href={`/despre-noi#${p.slug}`}
+            aria-label={`Află mai multe despre ${p.name}`}
+          >
+            Află mai multe <Icon />
+          </a>
+        )}
+      </div>
+    </li>
+  ))}
+</ul>

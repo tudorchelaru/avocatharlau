@@ -2,12 +2,17 @@
 import Base from "../layouts/Base.astro";
 import PageHero from "../components/PageHero.astro";
 import CtaBand from "../components/CtaBand.astro";
+import Portrait from "../components/Portrait.astro";
+import { SERVICE_HERO_IMAGE } from "../data/service-hero";
 import { SITE, AREAS, TEAM, type Area } from "../data/site";
 
 export const prerender = true;
 
 export function getStaticPaths() {
-  return AREAS.map((area) => ({ params: { area: area.slug }, props: { area } }));
+  return AREAS.map((area) => ({
+    params: { area: area.slug },
+    props: { area },
+  }));
 }
 
 const { area } = Astro.props as { area: Area };
@@ -23,7 +28,7 @@ const serviceSchema = {
   serviceType: area.title,
   description: area.seoDescription,
   url: `${SITE.url}${path}`,
-  provider: { "@id": `${SITE.url}/#cabinet` },
+  provider: team.map((p) => ({ "@id": `${SITE.url}/#${p.slug}` })),
   areaServed: [
     { "@type": "City", name: "Hârlău" },
     { "@type": "AdministrativeArea", name: "Județul Iași" },
@@ -45,81 +50,92 @@ const faqSchema = area.faq.length
   : [];
 ---
 
-<Base title={area.seoTitle} description={area.seoDescription} path={path} jsonLd={[serviceSchema, ...faqSchema]} phone={phone}>
+<Base
+  title={area.seoTitle}
+  description={area.seoDescription}
+  path={path}
+  jsonLd={[serviceSchema, ...faqSchema]}
+  phone={phone}
+>
   <PageHero
+    service
     eyebrow="Domenii de activitate"
     title={area.title}
+    image={SERVICE_HERO_IMAGE}
     lead={area.short}
-    crumbs={[{ label: area.title }]}
+    crumbs={[{ label: "Servicii", href: "/servicii" }, { label: area.title }]}
   />
 
   <section class="section">
     <div class="wrap article">
       <article class="prose">
-        {
-          area.blocks.map((b) =>
-            b.type === "ul" ? (
-              <ul class="checklist">
-                {b.items.map((i) => (
-                  <li>{i}</li>
-                ))}
-              </ul>
-            ) : b.type === "h2" ? (
-              <h2>{b.text}</h2>
-            ) : b.type === "h3" ? (
-              <h3>{b.text}</h3>
-            ) : (
-              <p>{b.text}</p>
-            ),
-          )
-        }
+        {area.blocks.map((b) =>
+          b.type === "ul" ? (
+            <ul class="checklist">
+              {b.items.map((i) => (
+                <li>{i}</li>
+              ))}
+            </ul>
+          ) : b.type === "h2" ? (
+            <h2>{b.text}</h2>
+          ) : b.type === "h3" ? (
+            <h3>{b.text}</h3>
+          ) : (
+            <p>{b.text}</p>
+          ),
+        )}
 
-        {
-          area.faq.length > 0 && (
-            <>
-              <h2>Întrebări frecvente</h2>
-              <div class="faq__list">
-                {area.faq.map((f) => (
-                  <details>
-                    <summary>{f.q}</summary>
-                    <p>{f.a}</p>
-                  </details>
-                ))}
-              </div>
-            </>
-          )
-        }
+        {area.faq.length > 0 && (
+          <>
+            <h2>Întrebări frecvente</h2>
+            <div class="faq__list">
+              {area.faq.map((f) => (
+                <details>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </>
+        )}
       </article>
 
       <aside class="aside">
         <nav class="aside__card" aria-label="Domenii de activitate">
           <p class="aside__title">Domenii de activitate</p>
           <ul class="aside__links">
-            {
-              AREAS.map((a) => (
-                <li>
-                  <a href={`/${a.slug}`} aria-current={a.slug === area.slug ? "page" : undefined}>
-                    {a.title}
-                  </a>
-                </li>
-              ))
-            }
+            {AREAS.map((a) => (
+              <li>
+                <a
+                  href={`/${a.slug}`}
+                  aria-current={a.slug === area.slug ? "page" : undefined}
+                >
+                  {a.title}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
         <div class="aside__card aside__card--dark">
           <p class="eyebrow">Programare</p>
           <p class="aside__title">Discutăm situația dumneavoastră</p>
           <ul class="aside__people">
-            {
-              team.map((p) => (
-                <li>
-                  <span>{p.name}</span>
+            {team.map((p) => (
+              <li>
+                <div class="aside__portrait">
+                  <Portrait person={p} sizes="72px" />
+                </div>
+                <div class="aside__person-details">
+                  <span class="aside__person-name">{p.name}</span>
+                  <span class="aside__person-role">Avocat</span>
                   <a href={p.phoneHref}>{p.phone}</a>
-                </li>
-              ))
-            }
+                </div>
+              </li>
+            ))}
           </ul>
-          <a href="/contact" class="btn btn--gold btn--block">Programează o consultație</a>
+          <a href="/contact" class="btn btn--gold btn--block">
+            Programează o consultație
+          </a>
         </div>
       </aside>
     </div>

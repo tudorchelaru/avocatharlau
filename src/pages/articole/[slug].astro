@@ -1,0 +1,230 @@
+---
+import Base from "../../layouts/Base.astro";
+import PageHero from "../../components/PageHero.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import Icon from "../../components/Icon.astro";
+import Portrait from "../../components/Portrait.astro";
+import ArticleBody from "../../components/ArticleBody.astro";
+import {
+  ARTICLES,
+  articlePath,
+  formatArticleDate,
+  type Article,
+} from "../../data/articles";
+import { SITE, TEAM } from "../../data/site";
+import { SERVICE_HERO_IMAGE } from "../../data/service-hero";
+import "../../styles/article.css";
+
+export const prerender = true;
+export function getStaticPaths() {
+  return ARTICLES.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+const { article } = Astro.props as { article: Article };
+const draft = article.status === "draft";
+const author = TEAM.find((person) => person.slug === article.authorSlug);
+const related = ARTICLES.filter(
+  (entry) =>
+    entry.slug !== article.slug && (draft || entry.status === "published"),
+)
+  .sort(
+    (a, b) =>
+      Number(b.category === article.category) -
+      Number(a.category === article.category),
+  )
+  .slice(0, 3);
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: article.title,
+  description: article.summary,
+  mainEntityOfPage: `${SITE.url}${articlePath(article)}`,
+  inLanguage: "ro-RO",
+  articleSection: article.category,
+  ...(article.date ? { datePublished: article.date } : {}),
+  ...(article.updated ? { dateModified: article.updated } : {}),
+  ...(author ? { author: { "@id": `${SITE.url}/#${author.slug}` } } : {}),
+  ...(article.tags?.length ? { keywords: article.tags } : {}),
+};
+---
+
+<Base
+  title={article.seoTitle || article.title}
+  description={article.summary}
+  path={articlePath(article)}
+  noindex={draft}
+  ogType="article"
+  jsonLd={draft ? [] : [schema]}
+>
+  <PageHero
+    service
+    eyebrow={article.category}
+    title={article.title}
+    lead={article.summary}
+    image={article.image ?? SERVICE_HERO_IMAGE}
+    crumbs={[
+      { label: "Articole", href: "/articole" },
+      { label: article.title },
+    ]}
+  />
+  <div class="reading-surface" id="continut-articol">
+    <div class="wrap">
+      <div class="reading-meta">
+        <span>{article.category}</span>
+        {article.date && (
+          <time datetime={article.date}>{formatArticleDate(article.date)}</time>
+        )}
+        {author && <span>{author.name}</span>}
+        {draft && (
+          <span class="reading-draft">În pregătire · model de structură</span>
+        )}
+        {article.updated && (
+          <span>
+            Actualizat:{" "}
+            <time datetime={article.updated}>
+              {formatArticleDate(article.updated)}
+            </time>
+          </span>
+        )}
+      </div>
+      <div class="reading-layout">
+        <article class="reading-main" aria-label={article.title}>
+          <div class="reading-sections">
+            {article.sections.map((section, index) => (
+              <section
+                class="reading-section"
+                id={section.id}
+                aria-labelledby={`${section.id}-title`}
+              >
+                <span class="reading-number" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h2 id={`${section.id}-title`}>{section.title}</h2>
+                <ArticleBody block={section} />
+                {section.subsections?.map((subsection) => (
+                  <div class="reading-subsection">
+                    <h3>{subsection.title}</h3>
+                    <ArticleBody block={subsection} />
+                  </div>
+                ))}
+                {section.note && <p class="reading-note">{section.note}</p>}
+                {section.sources?.length && (
+                  <p class="reading-sources">
+                    Temei legal:{" "}
+                    {section.sources.map((source, index) => (
+                      <>
+                        {index > 0 && "; "}
+                        <a href={source.url}>{source.label}</a>
+                      </>
+                    ))}
+                  </p>
+                )}
+                {section.links?.map((link) => (
+                  <a class="text-link reading-section-link" href={link.url}>
+                    {link.label} →
+                  </a>
+                ))}
+              </section>
+            ))}
+          </div>
+          {article.tags?.length && (
+            <ul class="reading-tags" aria-label="Subiecte">
+              {article.tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          )}
+          {article.faqs?.length && (
+            <section class="reading-faq" aria-labelledby="article-faq-title">
+              <h2 id="article-faq-title">Întrebări frecvente</h2>
+              {article.faqs.map((faq) => (
+                <details>
+                  <summary>{faq.question}</summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </section>
+          )}
+          <a class="text-link reading-back" href="/articole#lista-articole">
+            ← Înapoi la articole
+          </a>
+        </article>
+        <aside class="reading-sidebar" aria-label="Cuprins și informații utile">
+          <nav
+            class="reading-panel reading-toc"
+            aria-labelledby="article-toc-title"
+          >
+            <h2 id="article-toc-title">În acest articol</h2>
+            <ol>
+              {article.sections.map((section) => (
+                <li>
+                  <a href={`#${section.id}`}>{section.title}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+          <div class="reading-sticky">
+            <section
+              class="reading-panel reading-help"
+              aria-labelledby="article-help-title"
+            >
+              <div class="reading-help-copy">
+                {!author && <Icon name="scales" />}
+                <h2 id="article-help-title">Ai nevoie de ajutor?</h2>
+                <p>
+                  Discutăm despre situația ta și găsim împreună pașii potriviți
+                  pentru tine.
+                </p>
+                {author ? (
+                  <div class="reading-help-person">
+                    <div class="aside__portrait">
+                      <Portrait person={author} sizes="72px" />
+                    </div>
+                    <div class="aside__person-details">
+                      <span class="aside__person-name">{author.name}</span>
+                      <span class="aside__person-role">Autorul articolului</span>
+                      <a class="reading-help-phone" href={author.phoneHref}>
+                        <Icon name="phone" />
+                        {author.phone}
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <a class="reading-help-phone" href={SITE.phoneHref}>
+                    <Icon name="phone" />
+                    {SITE.phone}
+                  </a>
+                )}
+                <a class="btn btn--gold btn--block" href="/contact">
+                  Programează o consultație
+                </a>
+              </div>
+              <ul class="reading-trust">
+                <li><Icon name="shield" /><span>Consultații<br />confidențiale</span></li>
+                <li><Icon name="people" /><span>Soluții<br />personalizate</span></li>
+                <li><Icon name="landmark" /><span>Avocați în<br />Baroul Iași</span></li>
+              </ul>
+            </section>
+            {related.length > 0 && (
+              <section
+                class="reading-panel reading-similar"
+                aria-labelledby="article-related-title"
+              >
+                <h2 id="article-related-title">Articole similare</h2>
+                {related.map((entry) => (
+                  <a href={articlePath(entry)}>
+                    <span>{entry.category}</span>
+                    <h3>{entry.title}</h3>
+                  </a>
+                ))}
+              </section>
+            )}
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+  <CtaBand />
+</Base>

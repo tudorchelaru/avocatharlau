@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import PageHero from "../components/PageHero.astro";
+import ServiceGrid from "../components/ServiceGrid.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { SERVICE_HERO_IMAGE } from "../data/service-hero";
+export const prerender = true;
+---
+
+<Base
+  title="Servicii juridice pentru Hârlău și împrejurimi"
+  description="Descoperă domeniile de asistență juridică: familie, civil, penal, imigrări, executări silite, contracte și societăți comerciale."
+  path="/servicii"
+>
+  <PageHero
+    service
+    eyebrow="Serviciile noastre"
+    title="Cu ce te putem ajuta."
+    image={SERVICE_HERO_IMAGE}
+    lead="Alege domeniul relevant pentru situația ta. Pe fiecare pagină găsești informații și datele de contact ale avocaților care te pot ajuta."
+    crumbs={[{ label: "Servicii" }]}
+  />
+  <section class="section">
+    <div class="wrap">
+      <ServiceGrid />
+    </div>
+  </section>
+  <CtaBand />
+</Base>

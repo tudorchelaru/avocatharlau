@@ -1,0 +1,68 @@
+---
+import map from "../data/community-map.json";
+const labels: Record<string, { dx: number; dy: number; anchor?: string }> = {
+  Hârlău: { dx: 0, dy: 30, anchor: "middle" },
+  Deleni: { dx: 10, dy: -9 },
+  Scobinți: { dx: 11, dy: -7 },
+  Cotnari: { dx: -12, dy: -9, anchor: "end" },
+  Belcești: { dx: -12, dy: 4, anchor: "end" },
+};
+---
+
+<figure class="community-map">
+  <figcaption>Județul Iași</figcaption>
+  <svg
+    viewBox={map.viewBox}
+    role="img"
+    aria-labelledby="community-map-title community-map-description"
+  >
+    <title id="community-map-title">Hârlău și localitățile din împrejurimi</title>
+    <desc id="community-map-description">
+      Hartă orientativă a zonelor administrative Hârlău, Deleni, Scobinți,
+      Cotnari și Belcești. Marcajele indică zonele geografice, nu sedii de
+      avocatură.
+    </desc>
+    <g class="community-map__areas">
+      {map.areas.map((area) => (
+        <path d={area.path} />
+      ))}
+    </g>
+    {map.places.map((place) => (
+      <g
+        class:list={[
+          "community-map__place",
+          { "community-map__place--main": place.name === "Hârlău" },
+        ]}
+      >
+        {place.name === "Hârlău" && (
+          <circle
+            class="community-map__halo"
+            cx={place.x}
+            cy={place.y}
+            r="14"
+          />
+        )}
+        <circle
+          cx={place.x}
+          cy={place.y}
+          r={place.name === "Hârlău" ? 6.5 : 3.8}
+        />
+        <text
+          x={place.x + labels[place.name].dx}
+          y={place.y + labels[place.name].dy}
+          text-anchor={labels[place.name].anchor || "start"}
+        >
+          {place.name}
+        </text>
+      </g>
+    ))}
+  </svg>
+  <a
+    class="community-map__credit"
+    href="https://www.openstreetmap.org/copyright"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Hartă orientativă · © OpenStreetMap
+  </a>
+</figure>

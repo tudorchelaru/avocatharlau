@@ -3,29 +3,81 @@ import { SITE } from "../data/site";
 
 interface Props {
   title: string;
+  service?: boolean;
   lead?: string;
   eyebrow?: string;
   crumbs: { label: string; href?: string }[];
+  image?: {
+    base: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    widths?: number[];
+    aspectRatio?: string;
+    position?: string;
+  };
 }
 
-const { title, lead, eyebrow, crumbs } = Astro.props;
+const { title, lead, eyebrow, crumbs, image, service = false } = Astro.props;
+const imageWidths = image?.widths || [768, 1200, 1536];
+const imageSrcset = (format: string) =>
+  imageWidths
+    .map((width) => `${image?.base}-${width}w.${format} ${width}w`)
+    .join(", ");
+const imageFallbackWidth =
+  imageWidths.length > 2 ? imageWidths[1] : imageWidths[0];
 ---
 
-<section class="page-hero">
-  <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Acasă</a></li>
-        {
-          crumbs.map((c) => (
-            <li>{c.href ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
-          ))
-        }
-      </ol>
-    </nav>
-    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-    <h1>{title}</h1>
-    {lead && <p class="page-hero__lead">{lead}</p>}
+<section class:list={["page-hero", { "page-hero--photo": image, "page-hero--service": service }]}>
+  <div class:list={["wrap", { "page-hero__grid": image }]}>
+    <div class="page-hero__copy">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li>
+            <a href="/">Acasă</a>
+          </li>
+          {crumbs.map((c) => (
+            <li>
+              {c.href ? (
+                <a href={c.href}>{c.label}</a>
+              ) : (
+                <span aria-current="page">{c.label}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+      {eyebrow && <p class="eyebrow hero-enter">{eyebrow}</p>}
+      <h1 class="hero-enter" style="--delay: 90ms">
+        {title}
+      </h1>
+      {lead && (
+        <p class="page-hero__lead hero-enter" style="--delay: 180ms">
+          {lead}
+        </p>
+      )}
+    </div>
+    {image && (
+      <picture class="page-hero__image">
+        <source
+          type="image/avif"
+          srcset={imageSrcset("avif")}
+          sizes={service ? "(max-width: 767px) 100vw, 42vw" : "(max-width: 767px) 100vw, 55vw"}
+        />
+        <img
+          src={`${image.base}-${imageFallbackWidth}w.webp`}
+          srcset={imageSrcset("webp")}
+          sizes={service ? "(max-width: 767px) 100vw, 42vw" : "(max-width: 767px) 100vw, 55vw"}
+          width={image.width || 1536}
+          height={image.height || 1024}
+          style={`--page-hero-image-ratio: ${image.aspectRatio || "3 / 2"}; object-position: ${image.position || "center"};`}
+          alt={image.alt}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+    )}
   </div>
 </section>
 
@@ -35,7 +87,7 @@ const { title, lead, eyebrow, crumbs } = Astro.props;
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [{ label: "Acasă", href: "/" }, ...crumbs].map((c, i, all) => ({
+    itemListElement: [{ label: "Acasă", href: "/" }, ...crumbs].map((c, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: c.label,

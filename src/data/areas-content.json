@@ -118,7 +118,7 @@
    }
   ]
  },
- "civil": {
+ "avocat-drept-civil-harlau": {
   "title": "Drept civil",
   "blocks": [
    {
@@ -194,7 +194,7 @@
    }
   ]
  },
- "penal": {
+ "avocat-drept-penal-harlau": {
   "title": "Drept penal",
   "blocks": [
    {

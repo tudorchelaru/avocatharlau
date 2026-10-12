@@ -1,0 +1,17 @@
+{
+  "method": "Original photo pixels, spatial resize only; no generative processing or facial retouching",
+  "checks": [
+    {
+      "person": "Andreea Chelaru",
+      "originalFacePixelsMatch": true
+    },
+    {
+      "person": "Răzvan Botezatu",
+      "originalFacePixelsMatch": true
+    },
+    {
+      "person": "Roxana Chiperi",
+      "originalFacePixelsMatch": true
+    }
+  ]
+}

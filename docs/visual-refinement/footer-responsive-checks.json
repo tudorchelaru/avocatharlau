@@ -1,0 +1,32 @@
+[
+  {
+    "columns": "154.5px 154.5px",
+    "height": 622,
+    "overflow": false,
+    "width": 375
+  },
+  {
+    "columns": "162px 162px",
+    "height": 622,
+    "overflow": false,
+    "width": 390
+  },
+  {
+    "columns": "182px 182px",
+    "height": 607,
+    "overflow": false,
+    "width": 430
+  },
+  {
+    "columns": "326px 326px",
+    "height": 693,
+    "overflow": false,
+    "width": 768
+  },
+  {
+    "columns": "345.727px 256.094px 256.094px 230.484px",
+    "height": 373,
+    "overflow": false,
+    "width": 1440
+  }
+]

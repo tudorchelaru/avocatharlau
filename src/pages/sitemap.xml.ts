@@ -1,14 +1,28 @@
 import type { APIRoute } from "astro";
 import { SITE, AREAS } from "../data/site";
+import { publishedArticles, articlePath } from "../data/articles";
 
 export const prerender = true;
 
 const pages: { path: string; priority: string; changefreq: string }[] = [
   { path: "/", priority: "1.0", changefreq: "monthly" },
-  ...AREAS.map((a) => ({ path: `/${a.slug}`, priority: "0.8", changefreq: "monthly" })),
+  { path: "/servicii", priority: "0.9", changefreq: "monthly" },
+  { path: "/articole", priority: "0.7", changefreq: "monthly" },
+  ...publishedArticles.map((article) => ({
+    path: articlePath(article), priority: "0.7", changefreq: "monthly",
+  })),
+  ...AREAS.map((a) => ({
+    path: `/${a.slug}`,
+    priority: "0.8",
+    changefreq: "monthly",
+  })),
   { path: "/despre-noi", priority: "0.7", changefreq: "yearly" },
   { path: "/contact", priority: "0.8", changefreq: "yearly" },
-  { path: "/politica-de-confidentialitate", priority: "0.2", changefreq: "yearly" },
+  {
+    path: "/politica-de-confidentialitate",
+    priority: "0.2",
+    changefreq: "yearly",
+  },
   { path: "/termeni-si-conditii", priority: "0.2", changefreq: "yearly" },
 ];
 
@@ -31,5 +45,7 @@ ${urls}
 </urlset>
 `;
 
-  return new Response(xml, { headers: { "Content-Type": "application/xml; charset=utf-8" } });
+  return new Response(xml, {
+    headers: { "Content-Type": "application/xml; charset=utf-8" },
+  });
 };

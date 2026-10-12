@@ -1,0 +1,92 @@
+[
+  {
+    "copyFitsHero": true,
+    "headerHeight": 79,
+    "height": 720,
+    "heroHeight": 560,
+    "horizontalOverflow": false,
+    "nextSectionTop": 639,
+    "trustBottom": 589,
+    "width": 1280
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 79,
+    "height": 768,
+    "heroHeight": 584,
+    "horizontalOverflow": false,
+    "nextSectionTop": 663,
+    "trustBottom": 608,
+    "width": 1366
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 82,
+    "height": 700,
+    "heroHeight": 560,
+    "horizontalOverflow": false,
+    "nextSectionTop": 642,
+    "trustBottom": 607,
+    "width": 1440
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 82,
+    "height": 800,
+    "heroHeight": 600,
+    "horizontalOverflow": false,
+    "nextSectionTop": 682,
+    "trustBottom": 627,
+    "width": 1440
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 86,
+    "height": 850,
+    "heroHeight": 600,
+    "horizontalOverflow": false,
+    "nextSectionTop": 686,
+    "trustBottom": 637,
+    "width": 1512
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 89,
+    "height": 800,
+    "heroHeight": 600,
+    "horizontalOverflow": false,
+    "nextSectionTop": 689,
+    "trustBottom": 641,
+    "width": 1728
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 89,
+    "height": 1080,
+    "heroHeight": 720,
+    "horizontalOverflow": false,
+    "nextSectionTop": 809,
+    "trustBottom": 738,
+    "width": 1920
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 89,
+    "height": 1440,
+    "heroHeight": 780,
+    "horizontalOverflow": false,
+    "nextSectionTop": 869,
+    "trustBottom": 768,
+    "width": 2560
+  },
+  {
+    "copyFitsHero": true,
+    "headerHeight": 73,
+    "height": 844,
+    "heroHeight": 829,
+    "horizontalOverflow": false,
+    "nextSectionTop": 902,
+    "trustBottom": 622,
+    "width": 390
+  }
+]

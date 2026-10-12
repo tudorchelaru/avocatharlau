@@ -1,0 +1,38 @@
+---
+import type { TeamMember } from "../data/site";
+interface Props {
+  person: TeamMember;
+  eager?: boolean;
+  sizes?: string;
+}
+const {
+  person,
+  eager = false,
+  sizes = "(max-width: 640px) 38vw, 200px",
+} = Astro.props;
+const base = person.portraitBase || `/images/echipa/${person.slug}`;
+---
+
+<picture>
+  <source
+    type="image/avif"
+    srcset={`${base}-400w.avif 400w, ${base}-600w.avif 600w`}
+    sizes={sizes}
+  />
+  <img
+    src={`${base}-600w.webp`}
+    srcset={`${base}-400w.webp 400w, ${base}-600w.webp 600w`}
+    sizes={sizes}
+    alt={`Avocat ${person.name}`}
+    style={
+      person.portraitPosition
+        ? `object-position: ${person.portraitPosition}; filter: none;`
+        : undefined
+    }
+    width="600"
+    height="750"
+    loading={eager ? "eager" : "lazy"}
+    fetchpriority={eager ? "high" : "auto"}
+    decoding="async"
+  />
+</picture>
